@@ -5,8 +5,6 @@ class CreateCourses < ActiveRecord::Migration[6.0]
       t.text :description
       t.string :difficulty
       t.string :source_url
-      t.boolean :completed, :default => false
-      t.integer :language_id
       t.timestamps
     end
   end

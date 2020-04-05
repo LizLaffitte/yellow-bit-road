@@ -1,5 +1,4 @@
 class Course < ApplicationRecord
-    belongs_to :language
-    has_and_belongs_to_many :paths
-    has_and_belongs_to_many :users
+    has_many :paths, through: :checkpoints
+    has_many :users, through: :registrations
 end
