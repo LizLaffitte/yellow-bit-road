@@ -10,6 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_04_05_223418) do
+
+  create_table "checkpoints", force: :cascade do |t|
+    t.integer "order"
+    t.date "goal_date"
+    t.boolean "completed", default: false
+    t.integer "course_id"
+    t.integer "path_id"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "difficulty"
+    t.string "source_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "paths", force: :cascade do |t|
+    t.string "name"
+    t.string "language"
+    t.boolean "public", default: false
+    t.date "goal_date"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.string "email"
+    t.boolean "admin", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end

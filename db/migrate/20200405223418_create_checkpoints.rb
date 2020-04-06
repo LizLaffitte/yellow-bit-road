@@ -6,6 +6,7 @@ class CreateCheckpoints < ActiveRecord::Migration[6.0]
       t.boolean :completed, :default => false
       t.integer :course_id
       t.integer :path_id
+      t.integer :user_id
       t.timestamps
     end
   end
