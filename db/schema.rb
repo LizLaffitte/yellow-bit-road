@@ -23,8 +23,7 @@ ActiveRecord::Schema.define(version: 2020_04_05_223418) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "courses", force: :cascade do |t|
-    t.string "name"
+  create_table "courses", force: :cascade do |t    t.string "name"
     t.text "description"
     t.string "difficulty"
     t.string "source_url"

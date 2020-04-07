@@ -10,7 +10,8 @@
   </head>
 
   <body>
-  <%= header_nav %>
+  
     <%= yield %>
+    <footer><%= button_to "Log out", logout_path, method: :post %></footer>
   </body>
 </html>
