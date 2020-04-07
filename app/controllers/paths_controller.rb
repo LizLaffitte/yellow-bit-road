@@ -6,6 +6,12 @@ class PathsController < ApplicationController
 
     def create
         @path = Path.new(path_params)
+        @user = current_user
+        if @path.save
+            redirect_to user_path(@user)
+        else
+            render :new
+        end
     end
 
     def edit
@@ -20,6 +26,6 @@ class PathsController < ApplicationController
 
     private
     def path_params
-        params.require(:path).permit(:name, :language, :public, :goal_date, :user_id)
+        params.require(:path).permit(:name, :public, :goal_date, :user_id)
     end
 end
