@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :roads, only: [:index]
   end
   resources :roads do
-    resources :checkpoints, only: [:new]
+    resources :checkpoints, only: [:new, :create]
   end
 
  
