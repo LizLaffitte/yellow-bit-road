@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do
     resources :paths, only: [:index, :show]
   end
-  resources :paths
+  resources :paths do
+    resources :courses, only: [:new]
+  end
 
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"

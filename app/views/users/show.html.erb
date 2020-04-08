@@ -1,2 +1,8 @@
 <h1><%= "#{@user.username}'s Profile" %></h1>
+<h2>Paths:</h2>
+<ul>
+<% @paths.each do |path| %>
+    <li><%= path.name %></li>
+<% end %>
+</ul>
 <p> <%= button_to "Create A New Learning Path", new_path_path %></p>
