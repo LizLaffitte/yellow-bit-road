@@ -5,9 +5,9 @@ class SessionsController < ApplicationController
     end
 
     def create
-        if logged_in?
-            redirect_to user_path(@user)
-        else
+        # if logged_in?
+        #     redirect_to user_path(@user)
+        # else
             @user = User.find_by(username: params[:username])
             if @user && @user.authenticate(params[:password])
                 session[:user_id] = @user.id
@@ -15,7 +15,9 @@ class SessionsController < ApplicationController
             else
                 render '/login'
             end
-        end
+
+        # end
+        
     end
 
     def destroy
