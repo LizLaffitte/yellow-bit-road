@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   resources :users
   get '/signup', to: "users#new"
   post '/signup', to: "users#create"
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index]
   resources :roads do
-    resources :courses, only: [:new]
+    resources :checkpoints, only: [:new]
   end
 
   get '/login', to: "sessions#new"

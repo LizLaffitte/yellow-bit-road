@@ -14,6 +14,11 @@ class RoadsController < ApplicationController
         end
     end
 
+    def show
+        @road = Road.find_by_id(params[:id])
+        
+    end
+
     def edit
     end
 
