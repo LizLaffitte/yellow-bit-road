@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_08_001639) do
+ActiveRecord::Schema.define(version: 2020_04_08_002542) do
 
   create_table "checkpoints", force: :cascade do |t|
     t.integer "order"
     t.date "goal_date"
     t.boolean "completed", default: false
     t.integer "course_id"
-    t.integer "path_id"
+    t.integer "road_id"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
