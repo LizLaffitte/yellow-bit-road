@@ -3,12 +3,15 @@ Rails.application.routes.draw do
   resources :users
   get '/signup', to: "users#new"
   post '/signup', to: "users#create"
-  resources :users, only: [:index]
+  get '/login', to: "sessions#new"
+  post '/login', to: "sessions#create"
+  post '/logout', to: "sessions#destroy"
+  resources :users, only: [:index] do
+    rescources :roads, only: [index]
+  end
   resources :roads do
     resources :checkpoints, only: [:new]
   end
 
-  get '/login', to: "sessions#new"
-  post '/login', to: "sessions#create"
-  post '/logout', to: "sessions#destroy"
+ 
 end
