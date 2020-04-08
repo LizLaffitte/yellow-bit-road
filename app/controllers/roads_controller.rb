@@ -16,7 +16,11 @@ class RoadsController < ApplicationController
 
     def show
         @road = Road.find_by_id(params[:id])
-        
+
+    end
+
+    def index
+        @roads = Road.all
     end
 
     def edit
