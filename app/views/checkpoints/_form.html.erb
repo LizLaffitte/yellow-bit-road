@@ -1,0 +1,10 @@
+<%= form_for [@road, @checkpoint] do |f| %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :road_id %>
+    <%= f.label :course_id, "Select or Add a Course" %>
+    <%= f.text_field :course_id %> <br /><br />
+    <%= f.label :goal_date %>
+    <%= f.date_field :goal_date %><br /><br />
+
+    <%= f.submit %>
+<% end %>
