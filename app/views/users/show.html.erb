@@ -2,7 +2,7 @@
 <h2>Coding Roads:</h2>
 <ul>
 <% @roads.each do |road| %>
-    <li><%= road.name %></li>
+    <li><%= link_to road.name, road_path(road) %></li>
 <% end %>
 </ul>
 <p> <%= button_to "Create A New Learning Road", new_road_path %></p>
