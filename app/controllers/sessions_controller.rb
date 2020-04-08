@@ -1,23 +1,22 @@
 class SessionsController < ApplicationController
     helper_method :log_in
     def new
-        @user = User.new
+        if logged_in?
+            @user = current_user
+            redirect_to user_path(@user)
+        else
+            @user = User.new
+        end
     end
 
     def create
-        # if logged_in?
-        #     redirect_to user_path(@user)
-        # else
-            @user = User.find_by(username: params[:username])
-            if @user && @user.authenticate(params[:password])
-                session[:user_id] = @user.id
-                redirect_to user_path(@user)
-            else
-                render '/login'
-            end
-
-        # end
-        
+        @user = User.find_by(username: params[:username])
+        if @user && @user.authenticate(params[:password])
+            session[:user_id] = @user.id
+            redirect_to user_path(@user)
+        else
+            render '/login'
+        end
     end
 
     def destroy
