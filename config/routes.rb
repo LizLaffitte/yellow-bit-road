@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post '/login', to: "sessions#create"
   post '/logout', to: "sessions#destroy"
   resources :users, only: [:index] do
-    rescources :roads, only: [index]
+    resources :roads, only: [:index]
   end
   resources :roads do
     resources :checkpoints, only: [:new]
