@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_08_001433) do
+ActiveRecord::Schema.define(version: 2020_04_08_001639) do
 
   create_table "checkpoints", force: :cascade do |t|
     t.integer "order"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_04_08_001433) do
     t.string "language"
   end
 
-  create_table "paths", force: :cascade do |t|
+  create_table "roads", force: :cascade do |t|
     t.string "name"
     t.boolean "public", default: false
     t.date "goal_date"
