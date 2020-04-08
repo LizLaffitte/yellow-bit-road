@@ -3,10 +3,8 @@ Rails.application.routes.draw do
   resources :users
   get '/signup', to: "users#new"
   post '/signup', to: "users#create"
-  resources :users, only: [:index, :show] do
-    resources :paths, only: [:index, :show]
-  end
-  resources :paths do
+  resources :users, only: [:index, :show]
+  resources :roads do
     resources :courses, only: [:new]
   end
 

@@ -1,8 +1,8 @@
 <h1><%= "#{@user.username}'s Profile" %></h1>
-<h2>Paths:</h2>
+<h2>Coding Roads:</h2>
 <ul>
-<% @paths.each do |path| %>
-    <li><%= path.name %></li>
+<% @roads.each do |road| %>
+    <li><%= road.name %></li>
 <% end %>
 </ul>
-<p> <%= button_to "Create A New Learning Path", new_path_path %></p>
+<p> <%= button_to "Create A New Learning Road", new_road_path %></p>

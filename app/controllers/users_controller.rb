@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
     def show
         @user = current_user
-        @paths = @user.paths
+        @roads = @user.roads
     end
 
     private
