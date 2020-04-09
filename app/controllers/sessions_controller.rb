@@ -1,12 +1,7 @@
 class SessionsController < ApplicationController
-    helper_method :log_in
+    before_action :go_home, only: [:new, :create]
     def new
-        if logged_in?
-            @user = current_user
-            redirect_to user_path(@user)
-        else
-            @user = User.new
-        end
+        @user = User.new
     end
 
     def create
@@ -24,8 +19,4 @@ class SessionsController < ApplicationController
         redirect_to login_path
     end
 
-    def log_in(user)
-        session[:user_id] = user.id
-
-    end
 end

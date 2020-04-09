@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
+    before_action :go_home, only: [:new, :create]
     def new
-        @user = User.new
+            @user = User.new
     end
 
     def create
         @user = User.new(user_params)
-        
         if @user.save
             session[:user_id] = @user.id
             redirect_to user_path(@user)
@@ -17,6 +17,9 @@ class UsersController < ApplicationController
     def show
         @user = current_user
         @roads = @user.roads
+    end
+
+    def destroy
     end
 
     private
