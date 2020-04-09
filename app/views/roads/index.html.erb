@@ -1,3 +1,5 @@
+<ul>
 <% @roads.each do |road| %>
-    <%= road.name %>
+    <li><%= link_to road.name, road_path(road) %></li>
 <% end %>   
+</ul>
