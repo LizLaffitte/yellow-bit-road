@@ -7,7 +7,10 @@ module ApplicationHelper
     #     end
     # end
 
-    def footer
+    def logged_in_nav
+        if logged_in?
+            render "layouts/header_nav"
+        end
     end
 
 
