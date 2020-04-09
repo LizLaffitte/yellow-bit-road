@@ -6,12 +6,15 @@ Rails.application.routes.draw do
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
   post '/logout', to: "sessions#destroy"
-  resources :users, only: [:index] do
-    resources :paths, only: [:index]
+  resources :users, only: [:show, :destroy] do
+    resources :roads
   end
-  resources :roads do
-    resources :courses, only: [:new, :create]
+  resources :roads, only: [:index, :show] do
+    resources :checkpoints
   end
+  resources :checkpoints, only: [:new, :create]
+  resources :roads
   resources :courses
- 
+
+  root 'roads#index'
 end
