@@ -1,2 +1,6 @@
 <h1><%= @road.name %></h1>
-<%= link_to "Add a course to your path", new_road_checkpoint_path(@road) %>
+<ul>
+<% @road.courses do |course| %>
+    <li><%= course.name %></li>
+<% end %>
+</ul>

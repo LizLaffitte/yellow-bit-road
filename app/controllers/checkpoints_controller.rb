@@ -1,7 +1,6 @@
 class CheckpointsController < ApplicationController
     def new
-        @road = Road.find_by(id: params[:road_id])
-        @checkpoint = @road.checkpoints.build(road_id: @road.id)
+     
     end
 
     def create

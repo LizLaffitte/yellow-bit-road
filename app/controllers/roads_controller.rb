@@ -16,7 +16,7 @@ class RoadsController < ApplicationController
 
     def show
         @road = Road.find_by_id(params[:id])
-
+        
     end
 
     def index
@@ -35,6 +35,6 @@ class RoadsController < ApplicationController
 
     private
     def road_params
-        params.require(:road).permit(:name, :public, :goal_date, :user_id)
+        params.require(:road).permit(:name, :public, :goal_date, :user_id, course_ids:[], courses_attributes:[:name])
     end
 end
