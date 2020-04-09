@@ -12,12 +12,5 @@ class Road < ApplicationRecord
     end
   end    
 
-  def courses_attributes=(course_attributes)
-    course_attributes.values.each do |course_attribute|
-      course = Course.find_or_create_by(course_attribute)
-      self.courses << course
-    end
-  end
-
 
 end
