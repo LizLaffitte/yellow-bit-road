@@ -1,6 +1,7 @@
 <h1><%= @road.name %></h1>
+
 <ul>
-<% @road.courses do |course| %>
+<% @road.courses.each do |course| %>
     <li><%= course.name %></li>
 <% end %>
 </ul>
