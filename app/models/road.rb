@@ -4,7 +4,7 @@ class Road < ApplicationRecord
     has_many :courses, through: :checkpoints
     accepts_nested_attributes_for :checkpoints
 
-    validates :name, presence: true, uniqueness: true
+    validates :name, presence: true
     validate :goal_date_cannot_be_in_the_past
 
   def goal_date_cannot_be_in_the_past
