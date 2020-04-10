@@ -1,5 +1,5 @@
 class RoadsController < ApplicationController
-    
+    before_action :find_road, only: [:show, :edit]
     def new
         @road = Road.new
         @user = current_user
@@ -18,7 +18,7 @@ class RoadsController < ApplicationController
     end
 
     def show
-        @road = Road.find_by_id(params[:id])
+       
         
     end
 
@@ -27,6 +27,7 @@ class RoadsController < ApplicationController
     end
 
     def edit
+        
     end
 
     def update
@@ -34,6 +35,10 @@ class RoadsController < ApplicationController
 
     def destroy
 
+    end
+
+    def find_road
+        @road = Road.find_by_id(params[:id])
     end
 
     private
