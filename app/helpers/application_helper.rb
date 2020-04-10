@@ -1,11 +1,10 @@
 module ApplicationHelper
 
-    # def header_nav
-    #     if logged_in?
-    #         "You Are Logged In"
-    #     else
-    #     end
-    # end
+    def has_errors?(this_obj)
+        if this_obj.errors
+           render partial: "layouts/error_display", locals: {obj_in_question: this_obj}
+        end
+    end
 
     def logged_in_nav
         if logged_in?
