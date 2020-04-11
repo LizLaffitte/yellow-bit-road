@@ -7,7 +7,7 @@
     <%= f.label :language %><br />
     <%= f.text_field :language %> <br /><br />
     <%= f.label :difficulty %><br />
-    <%= f.select(:difficulty, options_for_select([['Easy', 'easy'], ['Moderate', 'moderate'], ['Challenging', 'challenging']])) %> <br /><br />
+    <%= f.select(:difficulty, options_for_select(difficulty_levels)) %> <br /><br />
     <%= f.label "Link to Course" %><br />
     <%= f.text_field :source_url %><br /><br />
     <%= f.submit %>
