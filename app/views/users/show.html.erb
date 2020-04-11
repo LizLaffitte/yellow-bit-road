@@ -5,4 +5,4 @@
     <li><%= link_to road.name, user_road_path(road) %></li>
 <% end %>
 </ul>
-<p> <%= link_to "Add A New Road", new_road_path %></p>
+<p> <%= link_to "Add A New Road", new_user_road_path(current_user) %></p>
