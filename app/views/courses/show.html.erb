@@ -2,4 +2,4 @@
 <strong><%= @course.language %> | <%= @course.difficulty %> </strong>
 <p><%= @course.description %>
 </p>
-<%= link_to "Find the Course Online", @course.source_url, target: "_blank" %>
+<%= link_to "Find the Course Online", @course.source_url, target: "_blank" if @course.source_url.nil? %>
