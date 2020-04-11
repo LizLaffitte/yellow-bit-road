@@ -1,11 +1,17 @@
 <h1>Add A Checkpoint</h1>
-<%= form_for([:user @checkpoint]) do |f| %>
+<%= form_for @checkpoint, url: new_road_checkpoint_path(@road) do |f| %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.label "Course" %><br />
+    <%= f.label "Pick an Existing Course" %><br />
     <%= f.collection_select :course_id, Course.all, :id, :name %><br /><br />
-    <%= f.fields_for :courses, course.checkpoints.build do |course| %>
-        <%= course.text_field :name %>
-      <% end %>
+    <%= f.fields_for :courses do |course| %>
+        <p>Or Add a New Course:</p>
+        <%= course.label :name %><br />
+        <%= course.text_field :name %> <br /><br />
+        <%= course.label :description %><br />
+        <%= course.text_area :description %> <br /><br />
+        <%= course.label :language %><br />
+        <%= course.text_field :language %> <br /><br />
+    <% end %>
 
     <%= f.label :goal_date %>
     <br />
