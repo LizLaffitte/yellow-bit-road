@@ -1,6 +1,9 @@
 class CheckpointsController < ApplicationController
     def new
-     
+        if params[:road_id]
+            @road = params[:road_id]
+        end
+
     end
 
     def create

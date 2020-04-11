@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     before_action :go_home, only: [:new, :create]
+    
     def new
             @user = User.new
     end
