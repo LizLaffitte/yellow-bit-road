@@ -12,8 +12,10 @@ Rails.application.routes.draw do
   resources :roads do
     resources :checkpoints
   end
-  resources :checkpoints, only: [:new, :create]
-  resources :courses
+  
+  resources :courses do
+    resources :checkpoints, only: [:new, :create]
+  end
 
   root 'roads#index'
 end
