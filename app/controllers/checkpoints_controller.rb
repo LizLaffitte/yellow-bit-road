@@ -1,5 +1,5 @@
 class CheckpointsController < ApplicationController
-    
+
 
     def new
         if params[:road_id]
@@ -7,6 +7,7 @@ class CheckpointsController < ApplicationController
             if @road.user == current_user
                 @checkpoint = Checkpoint.new(road_id: params[:road_id])
                 @course = Course.new
+                @course.checkpoints << @checkpoint
             else
                 redirect_to roads_path
             end
@@ -18,10 +19,15 @@ class CheckpointsController < ApplicationController
 
     def create
         @checkpoint = Checkpoint.new(checkpoint_params)
+        if @checkpoint.save
+            redirect_to road_path(params[:road_id])
+        else
+            render :new
+        end
     end
 
     private
     def checkpoint_params
-        params.require(:checkpoint).permit(:order, :goal_date, :completed, :course_id, :road_id, :user_id)
+        params.require(:checkpoint).permit(:order, :goal_date, :completed, :course_id, :road_id, :user_id, course_attributes:[:name, :description, :language, :difficulty, :source_url])
     end
 end

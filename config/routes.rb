@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :roads
   end
   resources :roads do
-    resources :checkpoints
+    resources :checkpoints, only: [:new, :create, :show, :destroy, :edit, :update]
   end
   
   resources :courses do
