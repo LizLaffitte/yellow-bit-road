@@ -1,21 +1,8 @@
-<%= has_errors?(@road) %>
-<%= form_for @road do |f| %>
-    <%= f.hidden_field :user_id, :value => @user.id %>
+
+    <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.label :name %>
     <%= f.text_field :name %> <br /><br />
     <%= f.label :goal_date %>
     <%= f.date_field :goal_date %><br /><br />
     <%= f.label :public %>
     <%= f.check_box :public %><br /><br />
-    <h2>Add Checkpoints to Your Road:</h2>
-    <%= f.fields_for :checkpoints do |check| %>
-        <%= check.label "Course" %>
-        <%= check.hidden_field :user_id, :value => @user.id %>
-        <%= check.collection_select :course_id, Course.all, :id, :name %><br /><br />
-        <%= check.label :goal_date %>
-        <br />
-        <%= check.date_field :goal_date %>
-    <% end %>
-    <br /><br />
-    <%= f.submit %>
-<% end %>
