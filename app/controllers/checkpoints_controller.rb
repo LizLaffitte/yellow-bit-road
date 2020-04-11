@@ -1,4 +1,6 @@
 class CheckpointsController < ApplicationController
+    
+
     def new
         if params[:road_id]
             @road = Road.find_by(id: params[:road_id])

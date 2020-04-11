@@ -1,11 +1,12 @@
 <%= has_errors?(@course) %>
 <%= form_for  @course do |f| %>
-    <%= f.label :name %>
+    <%= f.label :name %><br />
     <%= f.text_field :name %> <br /><br />
-    <%= f.label :description %>
+    <%= f.label :description %><br />
     <%= f.text_area :description %> <br /><br />
-    <%= f.label :language %>
+    <%= f.label :language %><br />
     <%= f.text_field :language %> <br /><br />
-
+    <%= f.label :difficulty %><br />
+    <%= f.options_for_select(difficulty_levels) %> <br /><br />
     <%= f.submit %>
 <% end %>

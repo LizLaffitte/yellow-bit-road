@@ -1,4 +1,10 @@
 class CoursesController < ApplicationController
+    helper_method :difficulty_levels
+  
+    def difficulty_levels
+        ["easy", "moderate", "challenging"]
+    end
+    
     def new
         @course = Course.new
     end
