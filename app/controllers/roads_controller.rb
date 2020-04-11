@@ -1,5 +1,6 @@
 class RoadsController < ApplicationController
     before_action :find_road, only: [:show, :edit]
+    helper_method :course_name
     def new
         @road = Road.new
         @user = current_user
@@ -27,7 +28,7 @@ class RoadsController < ApplicationController
     end
 
     def edit
-        
+        @checkpoints = @road.checkpoints
     end
 
     def update
@@ -39,6 +40,10 @@ class RoadsController < ApplicationController
 
     def find_road
         @road = Road.find_by_id(params[:id])
+    end
+    
+    def course_name(course_id)
+        @course = Course.find_by_id(course_id)
     end
 
     private
