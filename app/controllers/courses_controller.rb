@@ -1,10 +1,8 @@
 class CoursesController < ApplicationController
-    helper_method :difficulty_levels
+    
     before_action :find_course, only: [:show, :edit]
   
-    def difficulty_levels
-       [['Easy', 'easy'], ['Moderate', 'moderate'], ['Challenging', 'challenging']]
-    end
+    
 
     def new
         @course = Course.new
