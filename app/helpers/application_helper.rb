@@ -6,9 +6,16 @@ module ApplicationHelper
         end
     end
 
-    def logged_in_nav
+    def logged_in?
+        !!session[:user_id]
+    end
+
+
+    def nav_menu
         if logged_in?
-            render "layouts/header_nav"
+            render "layouts/logged_in_nav"
+        else
+            render "layouts/logged_out_nav"
         end
     end
 
