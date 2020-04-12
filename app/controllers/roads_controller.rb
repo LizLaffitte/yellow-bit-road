@@ -52,6 +52,8 @@ class RoadsController < ApplicationController
         @course = Course.find_by_id(course_id)
     end
 
+    
+
     private
     def road_params
         params.require(:road).permit(:name, :public, :goal_date, :user_id, checkpoints_attributes:[:course_id, :goal_date, :user_id])

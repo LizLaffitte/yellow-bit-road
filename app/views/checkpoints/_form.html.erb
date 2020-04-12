@@ -5,11 +5,13 @@
     <%= f.label :goal_date %>
     <br />
     <%= f.date_field :goal_date %><br /><br />
-    <%= f.label "Pick an Existing Course" %><br />
-    <%= f.collection_select :course_id, Course.all, :id, :name %><br /><br />
+    <% if @road.not_courses.length > 0 %>
+        <%= f.label "Pick an Existing Course" %><br />
+        <%= f.collection_select :course_id, @road.not_courses, :id, :name %><br /><br />
+    <% end %>
    <%  if  @checkpoint.new_record? %>
     <%= f.fields_for :course do |course| %>
-        <p>Or Add a New Course:</p>
+        <p>Add a New Course:</p>
             <%= course.label :name %><br />
             <%= course.text_field :name %> <br /><br />
             <%= course.label :description %><br />

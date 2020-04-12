@@ -13,5 +13,8 @@ class Road < ApplicationRecord
     end
   end    
 
+  def not_courses
+    Course.where.not(id: self.course_ids)
+  end
 
 end
