@@ -1,5 +1,5 @@
 class RoadsController < ApplicationController
-    before_action :find_road, only: [:show, :edit, :update, :delete]
+    before_action :find_road, only: [:show, :edit, :update, :destroy]
     helper_method :course_name
     def new
         @road = Road.new
@@ -41,6 +41,7 @@ class RoadsController < ApplicationController
 
     def destroy
         @road.destroy
+        redirect_to user_roads_path(current_user)
     end
 
     def find_road

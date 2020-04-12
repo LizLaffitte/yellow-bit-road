@@ -1,6 +1,6 @@
 class Road < ApplicationRecord
     belongs_to :user
-    has_many :checkpoints
+    has_many :checkpoints, dependent: :destroy
     has_many :courses, through: :checkpoints
     accepts_nested_attributes_for :checkpoints
 
