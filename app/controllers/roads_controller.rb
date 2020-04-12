@@ -1,5 +1,5 @@
 class RoadsController < ApplicationController
-    before_action :find_road, only: [:show, :edit]
+    before_action :find_road, only: [:show, :edit, :update]
     helper_method :course_name
     def new
         @road = Road.new
@@ -32,6 +32,11 @@ class RoadsController < ApplicationController
     end
 
     def update
+        if @road.update(road_params)
+            redirect_to road_path(@road)
+        else
+            render :edit
+        end
     end
 
     def destroy
