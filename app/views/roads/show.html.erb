@@ -1,0 +1,9 @@
+<h1><%= @road.name %></h1>
+<%= is_road_owner?(@road) %>
+
+<ul>
+<% @road.courses.each do |course| %>
+    <li><%= course.name %></li>
+<% end %>
+</ul>
+<%= link_to "Add a Checkpoint", new_road_checkpoint_path(@road) %> 

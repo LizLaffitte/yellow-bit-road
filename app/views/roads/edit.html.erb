@@ -1,0 +1,12 @@
+<h1>Edit <%= @road.name %></h1>
+<%= form_for @road, url: user_road_path(current_user, @road), method: 'patch' do |f| %>
+    <%= render partial: "form", locals: {f: f}  %>
+    <%= f.submit %>
+<% end %>
+<h2>Edit Checkpoints:</h2>
+<% @checkpoints.each do |check| %>
+    <%= check.course.name %><br />
+    <%= check.goal_date %><br />
+    <%= link_to "Edit", edit_road_checkpoint_path(@road, check)%>
+    <br /><br />
+<% end %>

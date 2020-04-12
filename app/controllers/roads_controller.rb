@@ -1,5 +1,5 @@
 class RoadsController < ApplicationController
-    before_action :find_road, only: [:show, :edit, :update]
+    before_action :find_road, only: [:show, :edit, :update, :delete]
     helper_method :course_name
     def new
         @road = Road.new
@@ -40,7 +40,7 @@ class RoadsController < ApplicationController
     end
 
     def destroy
-
+        @road.destroy
     end
 
     def find_road
