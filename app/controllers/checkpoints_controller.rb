@@ -25,9 +25,24 @@ class CheckpointsController < ApplicationController
             render :new
         end
     end
+    def edit
+        @road = Road.find_by_id(params[:road_id])
+    end
 
+    def update
+        if @checkpoint.update(checkpoint_params)
+            redirect_to road_path(params[:road_id])
+        else
+            render :edit
+        end
+    end
     def show
         @course = @checkpoint.course
+    end
+
+    def destroy
+        @checkpoint.destroy
+        redirect_to road_path(params[:road_id])
     end
 
     def find_checkpoint
