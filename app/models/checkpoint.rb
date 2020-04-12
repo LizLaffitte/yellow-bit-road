@@ -4,6 +4,7 @@ class Checkpoint < ApplicationRecord
     belongs_to :user
     accepts_nested_attributes_for :course, reject_if: proc { |attributes| attributes['name'].blank? }
     validate :goal_date_cannot_be_in_the_past
+    validates :course_id, uniqueness: {scope: [:road_id, :user_id],  message: "should only be on your road once "}
 
     def goal_date_cannot_be_in_the_past
       if goal_date.present? && goal_date < Date.today

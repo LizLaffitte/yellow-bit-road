@@ -22,6 +22,8 @@ class CheckpointsController < ApplicationController
         if @checkpoint.save
             redirect_to road_path(params[:road_id])
         else
+            @road = Road.find_by(id: params[:road_id])
+            
             render :new
         end
     end
