@@ -1,21 +1,4 @@
-<h1>Add A Checkpoint</h1>
+<h1>Add A Checkpoint to <%= @road.name %></h1>
 <%= has_errors?(@checkpoint) %>
-<%= form_for [@road, @checkpoint] do |f| %>
-    <%= render partial: "form", locals: {f: f} %>
-    <%= f.fields_for :course do |course| %>
-        <p>Or Add a New Course:</p>
-        <%= course.label :name %><br />
-        <%= course.text_field :name %> <br /><br />
-        <%= course.label :description %><br />
-        <%= course.text_area :description %> <br /><br />
-        <%= course.label :language %><br />
-        <%= course.text_field :language %> <br /><br />
-        <%= course.label :difficulty %><br />
-        <%= course.select(:difficulty, options_for_select(difficulty_levels)) %> <br /><br />
-        <%= course.label "Link to Course" %><br />
-        <%= course.text_field :source_url %><br /><br />
-    <% end %>
-
-    <%= f.submit %>
-
-<% end %>
+    <%= render "form" %>
+    
