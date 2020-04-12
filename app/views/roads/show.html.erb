@@ -1,5 +1,5 @@
 <h1><%= @road.name %></h1>
-<%= is_road_owner?(@road) %>
+<%= is_owner?(@road) %>
 
 <ul>
 <% @road.checkpoints.each do |check| %>

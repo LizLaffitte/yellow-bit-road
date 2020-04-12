@@ -1,5 +1,5 @@
 class CheckpointsController < ApplicationController
-
+    before_action :find_checkpoint, only: [:show, :edit, :update, :destroy]
 
     def new
         if params[:road_id]
@@ -24,6 +24,14 @@ class CheckpointsController < ApplicationController
         else
             render :new
         end
+    end
+
+    def show
+        @course = @checkpoint.course
+    end
+
+    def find_checkpoint
+        @checkpoint = Checkpoint.find_by_id(params[:id])
     end
 
     private

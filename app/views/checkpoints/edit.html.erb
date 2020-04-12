@@ -1,0 +1,5 @@
+<h1>Edit Checkpoint</h1>
+<%= has_errors?(@checkpoint) %>
+<%= form_for @checkpoint, url: road_checkpoint_path (@road, @checkpoint), method: 'patch' do |f| %>
+    <%= render partial: "form", locals: {f: f} %>
+<% end %>

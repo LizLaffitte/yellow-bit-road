@@ -1,4 +1,4 @@
-<%= form_for @checkpoint, url: road_checkpoints_path, method: 'post' do |f| %>
+
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.hidden_field :road_id, :value => params[:road_id] %>
     <%= f.label "Pick an Existing Course" %><br />
@@ -21,4 +21,3 @@
     <br />
     <%= f.date_field :goal_date %><br /><br />
     <%= f.submit %>
-<% end %>

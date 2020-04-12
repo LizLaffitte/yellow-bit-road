@@ -1,0 +1,6 @@
+<h1><%= @course.name %></h1>
+<strong><%= @course.language %> | <%= @course.difficulty %></strong>
+<p><%= @course.description %></p>
+<%= link_to "Course Link", @course.source_url %>
+<p><%= @checkpoint.goal_date %></p>
+<%= is_owner?(@checkpoint) %>
