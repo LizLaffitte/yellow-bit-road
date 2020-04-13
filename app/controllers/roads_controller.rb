@@ -11,7 +11,7 @@ class RoadsController < ApplicationController
         @road = Road.new(road_params)
         @user = current_user
         if @road.save
-            redirect_to user_roads_path(@user)
+            redirect_to user_path(@user)
         else
             render :new
         end
@@ -24,7 +24,11 @@ class RoadsController < ApplicationController
     end
 
     def index
-        @roads = Road.all
+        if params[:user_id]
+            @roads = User.find_by_id(params[:user_id]).roads
+        else
+            @roads = Road.all
+        end
     end
 
     def edit
