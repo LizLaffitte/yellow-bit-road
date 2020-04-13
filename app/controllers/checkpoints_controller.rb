@@ -12,7 +12,9 @@ class CheckpointsController < ApplicationController
                 redirect_to roads_path
             end
         elsif params[:course_id]   
+            @course = Course.find_by_id(params[:course_id])
             @checkpoint = Checkpoint.new(course_id: params[:course_id])
+            render "course_new"
         end
 
     end
