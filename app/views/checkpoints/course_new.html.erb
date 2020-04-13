@@ -4,8 +4,7 @@
 <p><%= @course.description %></p>
 <%= form_for [@course, @checkpoint] do |f| %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.hidden_field :coursed_id, :value => params[:course_id] %>
-    
+    <%= f.hidden_field :course_id, :value => @course.id %>
     <%= f.label :goal_date %>
     <br />
     <%= f.date_field :goal_date %><br /><br />

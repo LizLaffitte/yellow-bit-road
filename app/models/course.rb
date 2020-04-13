@@ -3,7 +3,7 @@ class Course < ApplicationRecord
     has_many :roads, through: :checkpoints
     has_many :users, through: :checkpoints
     validates :name, presence: true, length: {in: 3...100}, uniqueness: true
-    validates :language, presence: true, inclusion: {in: %w(css html ruby php javascript), message: "%{language} is not currently an option. Email an admin to ask for your language to be included" }
+    validates :language, presence: true, inclusion: {in: %w(CSS html ruby php javascript), message: "%{language} is not currently an option. Email an admin to ask for your language to be included" }
     validates :description, length: {maximum: 300}
     validates :difficulty, presence: true, inclusion: { in: %w(easy moderate challenging), message: "%{difficulty} is not a valid difficulty level" }
     
@@ -12,7 +12,7 @@ class Course < ApplicationRecord
     end
 
     def self.language_options
-        [['CSS', 'css'], ['HTML', 'html'], ['Ruby', 'ruby'], ['PHP', 'php'], ['JavaScript', 'javascript'], ['Python', 'python']]
+        [['CSS', 'CSS'], ['HTML', 'html'], ['Ruby', 'ruby'], ['PHP', 'php'], ['JavaScript', 'javascript'], ['Python', 'python']]
     end
 
 
