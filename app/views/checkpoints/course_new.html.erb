@@ -1,6 +1,7 @@
 <h1>Add <%= @course.name %></h1>
 <%= has_errors?(@checkpoint) %>
-<p><strong>Course:</strong> <%= @checkpoint.course.name %><br /></p>
+<p><strong><%= "#{@course.language} | #{@course.difficulty}" %>
+<p><%= @course.description %></p>
 <%= form_for [@course, @checkpoint] do |f| %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.hidden_field :coursed_id, :value => params[:course_id] %>
@@ -9,7 +10,8 @@
     <br />
     <%= f.date_field :goal_date %><br /><br />
     <%= f.label "Pick a Road" %><br />
-    <%= f.collection_select :roade_id, current_user.roads, :id, :name %>
+    <%= f.collection_select :road_id, current_user.roads, :id, :name %><br />
+    <br />
     <%= f.submit %>
 <% end %>
     
