@@ -22,13 +22,17 @@ class CheckpointsController < ApplicationController
     end
 
     def create
-        @checkpoint = Checkpoint.new(checkpoint_params)
+        @road = Road.find_by(id: params[:road_id])
+        @course = Course.find_by_id(params[:course_id])
+        if @road.nil? && @course.user == current_user || @course.nil? && @road.user == current_user
+            @checkpoint = Checkpoint.new(checkpoint_params)
+        else
+            redirect_to user_path(current_user)
+        end
         if @checkpoint.save
             redirect_to road_path(@checkpoint.road_id)
         else
-            @road = Road.find_by(id: params[:road_id])
             if @road.nil?
-                @course = Course.find_by_id(params[:course_id])
                 render "course_new"
             else
                 render :new

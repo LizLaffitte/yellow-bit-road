@@ -1,6 +1,6 @@
 <h1>Add A Checkpoint to <%= @road.name %></h1>
 <%= has_errors?(@checkpoint) %>
-<%=  @road.user == current_user %>
+
 <%= form_for [@road, @checkpoint] do |f| %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.hidden_field :road_id, :value => params[:road_id] %>
@@ -19,8 +19,8 @@
             <%= course.text_field :name %> <br /><br />
             <%= course.label :description %><br />
             <%= course.text_area :description %> <br /><br />
-            <%= course.label :language %><br />
-            <%= course.text_field :language %> <br /><br />
+            <%= course.label :language %>*<br />
+            <%= f.select(:language, options_for_select(Course.language_options)) %> <br /><br />
             <%= course.label :difficulty %><br />
             <%= course.select(:difficulty, options_for_select(Course.difficulty_levels)) %> <br /><br />
             <%= course.label "Link to Course" %><br />
