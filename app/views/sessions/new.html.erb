@@ -1,3 +1,4 @@
 <h1>Log In</h1>
-<%= session[:user_id]%>
+<%= has_errors?(@user) %>
 <%= render "form"  %>
+<%= link_to('Log in with Facebook!', '/auth/facebook') %>

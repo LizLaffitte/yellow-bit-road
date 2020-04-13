@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_08_002542) do
+ActiveRecord::Schema.define(version: 2020_04_13_222425) do
 
   create_table "checkpoints", force: :cascade do |t|
     t.integer "order"
@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 2020_04_08_002542) do
     t.boolean "admin", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "uid"
+    t.string "image"
   end
 
 end
