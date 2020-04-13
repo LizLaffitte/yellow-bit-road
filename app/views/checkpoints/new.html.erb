@@ -1,5 +1,6 @@
 <h1>Add A Checkpoint to <%= @road.name %></h1>
 <%= has_errors?(@checkpoint) %>
+<%=  @road.user == current_user %>
 <%= form_for [@road, @checkpoint] do |f| %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.hidden_field :road_id, :value => params[:road_id] %>

@@ -4,12 +4,14 @@ class CheckpointsController < ApplicationController
     def new
         if params[:road_id]
             @road = Road.find_by(id: params[:road_id])
-            if @road.user == current_user
+            if @road.nil?
+                redirect_to roads_path, alert: "Road not found."
+            elsif @road.user == current_user
                 @checkpoint = Checkpoint.new(road_id: params[:road_id])
                 @course = Course.new
                 @course.checkpoints << @checkpoint
             else
-                redirect_to roads_path
+                redirect_to roads_path, alert: "You have no power here."
             end
         elsif params[:course_id]   
             @course = Course.find_by_id(params[:course_id])
@@ -22,7 +24,6 @@ class CheckpointsController < ApplicationController
     def create
         @checkpoint = Checkpoint.new(checkpoint_params)
         if @checkpoint.save
-            
             redirect_to road_path(@checkpoint.road_id)
         else
             @road = Road.find_by(id: params[:road_id])
@@ -37,6 +38,11 @@ class CheckpointsController < ApplicationController
 
     def edit
         @road = Road.find_by_id(params[:road_id])
+        if @road.nil?
+            redirect_to roads_path, alert: "Road not found."
+        elsif @road.user != current_user
+            redirect_to roads_path, alert: "You have no power here."
+        end
     end
 
     def update
