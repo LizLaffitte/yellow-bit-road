@@ -15,8 +15,6 @@ class ApplicationController < ActionController::Base
             end
         end
 
-        def difficulty_levels
-            [['Easy', 'easy'], ['Moderate', 'moderate'], ['Challenging', 'challenging']]
-         end
+        
 
 end
