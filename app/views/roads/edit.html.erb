@@ -1,5 +1,5 @@
 <h1>Edit <%= @road.name %></h1>
-<%= form_for @road, url: user_road_path(current_user, @road), method: 'patch' do |f| %>
+<%= form_for @road do |f| %>
     <%= render partial: "form", locals: {f: f}  %>
     <%= f.submit %>
 <% end %>

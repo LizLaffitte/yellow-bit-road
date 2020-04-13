@@ -1,4 +1,13 @@
 <h1>Edit Checkpoint</h1>
 <%= has_errors?(@checkpoint) %>
-    <%= render "form" %>
+<%= form_for [@road, @checkpoint] do |f| %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :road_id, :value => params[:road_id] %>
+    <p><strong>Course:</strong> <%= @checkpoint.course.name %></p>
+    <%= f.label :goal_date %>
+    <br />
+    <%= f.date_field :goal_date %><br /><br />
+    <%= f.submit %>
+<% end %>
+    
 

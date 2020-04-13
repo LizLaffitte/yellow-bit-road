@@ -11,7 +11,7 @@ class RoadsController < ApplicationController
         @road = Road.new(road_params)
         @user = current_user
         if @road.save
-            redirect_to user_path(@user)
+            redirect_to road_path(@road)
         else
             render :new
         end
@@ -45,7 +45,7 @@ class RoadsController < ApplicationController
 
     def destroy
         @road.destroy
-        redirect_to user_roads_path(current_user)
+        redirect_to user_path(current_user)
     end
 
     def find_road

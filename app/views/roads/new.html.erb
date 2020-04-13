@@ -1,6 +1,6 @@
 <h1>Create a New Road</h1>
 <%= has_errors?(@road) %>
-<%= form_for @road, url: user_roads_path(current_user), method: 'post' do |f| %>
+<%= form_for @road do |f| %>
     <%= render partial: "form", locals: {f: f}  %>
 
 <h2>Add Checkpoints to Your Road:</h2>
