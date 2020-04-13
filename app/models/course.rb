@@ -12,7 +12,7 @@ class Course < ApplicationRecord
     end
 
     def self.language_options
-        [['CSS', 'css'], ['HTML', 'html'], ['Ruby', 'ruby'], ['PHP', 'php'], ['JavaScript', 'javascript']]
+        [['CSS', 'css'], ['HTML', 'html'], ['Ruby', 'ruby'], ['PHP', 'php'], ['JavaScript', 'javascript'], ['Python', 'python']]
     end
 
 
