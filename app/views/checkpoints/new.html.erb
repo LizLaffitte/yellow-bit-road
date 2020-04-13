@@ -21,7 +21,7 @@
             <%= course.label :language %><br />
             <%= course.text_field :language %> <br /><br />
             <%= course.label :difficulty %><br />
-            <%= course.select(:difficulty, options_for_select(difficulty_levels)) %> <br /><br />
+            <%= course.select(:difficulty, options_for_select(Course.difficulty_levels)) %> <br /><br />
             <%= course.label "Link to Course" %><br />
             <%= course.text_field :source_url %><br /><br />
         <% end %>

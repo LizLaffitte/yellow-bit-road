@@ -30,7 +30,6 @@ class CheckpointsController < ApplicationController
                 @course = Course.find_by_id(params[:course_id])
                 render "course_new"
             else
-
                 render :new
             end
         end
