@@ -20,4 +20,9 @@ class ApplicationController < ActionController::Base
             redirect_to user_path(user)    
         end
 
+        def must_login
+            if !logged_in?
+                redirect_to login_path
+            end
+        end
 end

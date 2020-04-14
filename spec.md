@@ -18,7 +18,7 @@ Specs:
 - [x] Include form display of validation errors (All new and edit forms show validation errors e.g. '/courses/new')
 
 Confirm:
-- [ ] The application is pretty DRY
+- [] The application is pretty DRY
 - [ ] Limited logic in controllers
 - [ ] Views use helper methods if appropriate
 - [ ] Views use partials if appropriate

@@ -1,5 +1,6 @@
 class CheckpointsController < ApplicationController
     before_action :find_checkpoint, only: [:show, :edit, :update, :destroy]
+    before_action :must_login, except: [:show]
 
     def new
         if params[:road_id]
