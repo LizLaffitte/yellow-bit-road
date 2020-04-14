@@ -66,12 +66,15 @@ class CheckpointsController < ApplicationController
         redirect_to road_path(params[:road_id])
     end
 
-    def find_checkpoint
-        @checkpoint = Checkpoint.find_by_id(params[:id])
-    end
+    
 
     private
     def checkpoint_params
         params.require(:checkpoint).permit(:order, :goal_date, :completed, :course_id, :road_id, :user_id, course_attributes:[:name, :description, :language, :difficulty, :source_url])
     end
+
+    def find_checkpoint
+        @checkpoint = Checkpoint.find_by_id(params[:id])
+    end
+    
 end
