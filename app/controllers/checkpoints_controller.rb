@@ -4,7 +4,7 @@ class CheckpointsController < ApplicationController
 
     def new
         if params[:road_id]
-            @road = Road.find_by(id: params[:road_id])
+            find_parent_road
             if @road.nil?
                 redirect_to roads_path, alert: "Road not found."
             elsif @road.user == current_user
@@ -15,7 +15,7 @@ class CheckpointsController < ApplicationController
                 redirect_to roads_path, alert: "You have no power here."
             end
         elsif params[:course_id]   
-            @course = Course.find_by_id(params[:course_id])
+           find_parent_course
             @checkpoint = Checkpoint.new(course_id: params[:course_id])
             render "course_new"
         end
@@ -23,8 +23,8 @@ class CheckpointsController < ApplicationController
     end
 
     def create
-        @road = Road.find_by(id: params[:road_id])
-        @course = Course.find_by_id(params[:course_id])
+        find_parent_road
+        find_parent_course
         if @road.nil? && @course.user == current_user || @course.nil? && @road.user == current_user
             @checkpoint = Checkpoint.new(checkpoint_params)
         else
@@ -42,7 +42,7 @@ class CheckpointsController < ApplicationController
     end
 
     def edit
-        @road = Road.find_by_id(params[:road_id])
+        find_parent_road
         if @road.nil?
             redirect_to roads_path, alert: "Road not found."
         elsif @road.user != current_user
@@ -51,10 +51,14 @@ class CheckpointsController < ApplicationController
     end
 
     def update
-        if @checkpoint.update(checkpoint_params)
-            redirect_to road_path(params[:road_id])
+        if @checkpoint.road.user == current_user
+            if @checkpoint.update(checkpoint_params)
+                redirect_to road_path(params[:road_id])
+            else
+                render :edit
+            end
         else
-            render :edit
+            redirect_to user_path(current_user)
         end
     end
     def show
@@ -76,5 +80,11 @@ class CheckpointsController < ApplicationController
     def find_checkpoint
         @checkpoint = Checkpoint.find_by_id(params[:id])
     end
-    
+
+    def find_parent_road
+        @road = Road.find_by(id: params[:road_id])
+    end
+    def find_parent_course
+        @course = Course.find_by_id(params[:course_id])
+    end
 end
