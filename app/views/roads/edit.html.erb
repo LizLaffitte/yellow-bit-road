@@ -1,12 +1,15 @@
 <h1>Edit <%= @road.name %></h1>
+<%= has_errors?(@road) %>
 <%= form_for @road do |f| %>
     <%= render partial: "form", locals: {f: f}  %>
     <%= f.submit %>
 <% end %>
-<h2>Edit Checkpoints:</h2>
-<% @checkpoints.each do |check| %>
-    <%= check.course.name %><br />
-    <%= check.goal_date %><br />
-    <%= link_to "Edit", edit_road_checkpoint_path(@road, check)%>
-    <br /><br />
+<% if !@checkpoints.nil? %>
+    <h2>Edit Checkpoints:</h2>
+    <% @checkpoints.each do |check| %>
+        <%= check.course.name %><br />
+        <%= check.goal_date %><br />
+        <%= link_to "Edit", edit_road_checkpoint_path(@road, check)%>
+        <br /><br />
+    <% end %>
 <% end %>

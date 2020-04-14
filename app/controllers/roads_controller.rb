@@ -34,6 +34,7 @@ class RoadsController < ApplicationController
 
     def edit
         @checkpoints = @road.checkpoints
+        
     end
 
     def update
