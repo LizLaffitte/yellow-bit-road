@@ -20,7 +20,7 @@
             <%= course.label :description %><br />
             <%= course.text_area :description %> <br /><br />
             <%= course.label :language %>*<br />
-            <%= f.select(:language, options_for_select(Course.language_options)) %> <br /><br />
+            <%= course.select(:language, options_for_select(Course.language_options)) %> <br /><br />
             <%= course.label :difficulty %><br />
             <%= course.select(:difficulty, options_for_select(Course.difficulty_levels)) %> <br /><br />
             <%= course.label "Link to Course" %><br />

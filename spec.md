@@ -12,10 +12,10 @@ Specs:
 - [x] Include signup ('/signup')
 - [x] Include login ('/login')
 - [x] Include logout ('/logout')
-- [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
+- [x] Include third party signup/login (Facebook via OmniAuth)
 - [x] Include nested resource show or index (Show: '/roads/:road_id/checkpoints/:id' e.g. '/roads/1/checkpoints/7')
-- [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
+- [x] Include nested resource "new" form ('/roads/:road_id/checkpoints/new' e.g. '/roads/5/checkpoints/new')
+- [x] Include form display of validation errors (All new and edit forms show validation errors e.g. '/courses/new')
 
 Confirm:
 - [ ] The application is pretty DRY
