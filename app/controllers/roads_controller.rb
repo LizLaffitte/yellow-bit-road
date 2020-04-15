@@ -13,6 +13,7 @@ class RoadsController < ApplicationController
         if @road.save
             redirect_to road_path(@road)
         else
+            @courses = Course.all
             render :new
         end
 
