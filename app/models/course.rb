@@ -1,5 +1,5 @@
 class Course < ApplicationRecord
-    has_many :checkpoints
+    has_many :checkpoints, dependent: :destroy
     has_many :roads, through: :checkpoints
     has_many :users, through: :checkpoints
     validates :name, presence: true, length: {in: 3...100}, uniqueness: true
