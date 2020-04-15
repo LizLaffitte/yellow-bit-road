@@ -15,5 +15,5 @@ class Course < ApplicationRecord
         ['CSS', 'HTML', 'Ruby', 'PHP', 'JavaScript', 'Python', 'Web Development', 'Cyber Security', 'Web Design', 'Java', 'iOS', 'Android', 'C#']
     end
 
-
+  
 end

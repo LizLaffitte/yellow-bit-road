@@ -2,5 +2,5 @@
 <strong><%= @course.topic %> | <%= @course.difficulty %></strong>
 <p><%= @course.description %></p>
 <%= link_to "Course Link", @course.source_url %>
-<p><%= @checkpoint.goal_date %></p>
+<p><%= @checkpoint.formatted_goal_date %></p>
 <%= is_owner?(@checkpoint) %>

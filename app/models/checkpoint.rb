@@ -12,4 +12,9 @@ class Checkpoint < ApplicationRecord
       end
     end    
 
+    def formatted_goal_date
+      @date_obj = self.goal_date.strftime('%D')
+    end
+
+
 end
