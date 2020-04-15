@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
     before_action :find_course, only: [:show, :edit]
+    before_action :admin_wall, only: [:edit, :update, :destroy]
 
     def new
         @course = Course.new
@@ -20,6 +21,15 @@ class CoursesController < ApplicationController
 
     def show
     end
+
+    def edit
+    end
+    
+    def update
+    end
+
+    def destroy
+    end
     
     private
     def course_params
@@ -27,5 +37,10 @@ class CoursesController < ApplicationController
     end
     def find_course
         @course = Course.find_by_id(params[:id])
+    end
+    def admin_wall
+        if !current_user.admin
+            redirect_to course_path(find_course)
+        end
     end
 end
