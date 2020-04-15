@@ -12,7 +12,6 @@
         <%= f.label "Pick an Existing Course" %><br />
         <%= f.collection_select :course_id, @road.not_courses, :id, :name, prompt: true %><br /><br />
     <% end %>
-   <%  if  @checkpoint.new_record? %>
     <%= f.fields_for :course do |course| %>
         <p>Or Add a New Course:</p>
             <%= course.label :name %><br />
@@ -25,7 +24,7 @@
             <%= course.select(:difficulty, options_for_select(Course.difficulty_levels), prompt: true) %> <br /><br />
             <%= course.label "Link to Course" %><br />
             <%= course.text_field :source_url %><br /><br />
-        <% end %>
-        <% end %>
+    <% end %>
+        
     <%= f.submit %>
 <% end %>

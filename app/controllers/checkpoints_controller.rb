@@ -37,6 +37,8 @@ class CheckpointsController < ApplicationController
             if @road.nil?
                 render "course_new"
             else
+                @course = Course.new
+                @course.checkpoints << @checkpoint
                 render :new
             end
         end
