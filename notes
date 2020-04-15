@@ -1,3 +1,0 @@
-- Add create, update and destroy actions for courses, only let admins access
-- Any way to avoid creating multiple owner_wall methods in the individual controllers
-- Alternate select code for new course form (<%= f.select(:language, options_for_select(Course.language_options)) %> )
