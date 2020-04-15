@@ -9,7 +9,7 @@
     <br />
     <%= f.date_field :goal_date %><br /><br />
     <%= f.label "Pick a Road" %><br />
-    <%= f.collection_select :road_id, current_user.roads, :id, :name %><br />
+    <%= f.collection_select :road_id, current_user.roads, :id, :name, prompt: true %><br />
     <br />
     <%= f.submit %>
 <% end %>

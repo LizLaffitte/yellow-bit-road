@@ -10,7 +10,7 @@
     <%= f.date_field :goal_date %><br /><br />
     <% if @road.not_courses.length > 0 %>
         <%= f.label "Pick an Existing Course" %><br />
-        <%= f.collection_select :course_id, @road.not_courses, :id, :name %><br /><br />
+        <%= f.collection_select :course_id, @road.not_courses, :id, :name, prompt: true %><br /><br />
     <% end %>
    <%  if  @checkpoint.new_record? %>
     <%= f.fields_for :course do |course| %>
@@ -20,9 +20,9 @@
             <%= course.label :description %><br />
             <%= course.text_area :description %> <br /><br />
             <%= course.label :language %>*<br />
-            <%= course.select(:language, options_for_select(Course.language_options)) %> <br /><br />
+            <%= course.select(:language, options_for_select(Course.language_options), prompt: true) %> <br /><br />
             <%= course.label :difficulty %><br />
-            <%= course.select(:difficulty, options_for_select(Course.difficulty_levels)) %> <br /><br />
+            <%= course.select(:difficulty, options_for_select(Course.difficulty_levels), prompt: true) %> <br /><br />
             <%= course.label "Link to Course" %><br />
             <%= course.text_field :source_url %><br /><br />
         <% end %>
