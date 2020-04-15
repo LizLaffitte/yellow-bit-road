@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-    before_action :find_course, only: [:show, :edit]
+    before_action :find_course, only: [:show, :edit, :update, :destroy]
     before_action :admin_wall, only: [:edit, :update, :destroy]
 
     def new
@@ -26,6 +26,11 @@ class CoursesController < ApplicationController
     end
     
     def update
+        if @course.update(course_params)
+            redirect_to course_path(@course)
+        else
+            render :edit
+        end
     end
 
     def destroy
