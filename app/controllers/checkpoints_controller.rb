@@ -1,6 +1,7 @@
 class CheckpointsController < ApplicationController
     before_action :find_checkpoint, only: [:show, :edit, :update, :destroy]
     before_action :must_login, except: [:show]
+    before_action :owner_wall, only: [:edit, :update, :destroy]
 
     def new
         if params[:road_id]
@@ -25,7 +26,7 @@ class CheckpointsController < ApplicationController
     def create
         find_parent_road
         find_parent_course
-        if @road.nil? && @course.user == current_user || @course.nil? && @road.user == current_user
+        if @road.nil? || @course.nil? && @road.user == current_user
             @checkpoint = Checkpoint.new(checkpoint_params)
         else
             redirect_to user_path(current_user)
@@ -50,15 +51,11 @@ class CheckpointsController < ApplicationController
         end
     end
 
-    def update
-        if @checkpoint.road.user == current_user
-            if @checkpoint.update(checkpoint_params)
-                redirect_to road_path(params[:road_id])
-            else
-                render :edit
-            end
+    def update 
+        if @checkpoint.update(checkpoint_params)
+            redirect_to road_path(params[:road_id])
         else
-            redirect_to user_path(current_user)
+            render :edit
         end
     end
     def show
@@ -68,9 +65,7 @@ class CheckpointsController < ApplicationController
     def destroy
         @checkpoint.destroy
         redirect_to road_path(params[:road_id])
-    end
-
-    
+    end    
 
     private
     def checkpoint_params
@@ -86,5 +81,10 @@ class CheckpointsController < ApplicationController
     end
     def find_parent_course
         @course = Course.find_by_id(params[:course_id])
+    end
+    def owner_wall
+        if @checkpoint.user != current_user
+            redirect_to user_path(current_user)
+        end
     end
 end
