@@ -1,16 +1,15 @@
 class RoadsController < ApplicationController
     before_action :find_road, only: [:show, :edit, :update, :destroy]
-    helper_method :course_name
+    before_action :must_login, only: [:new, :create, :edit, :update, :destroy]
+    before_action :owner_wall, only: [:edit, :update, :destroy]
     def new
         @road = Road.new
-        @user = current_user
         @road.checkpoints.build(completed: false)
         @courses = Course.all
     end
 
     def create
         @road = Road.new(road_params)
-        @user = current_user
         if @road.save
             redirect_to road_path(@road)
         else
@@ -20,8 +19,6 @@ class RoadsController < ApplicationController
     end
 
     def show
-       
-        
     end
 
     def index
@@ -58,8 +55,9 @@ class RoadsController < ApplicationController
     def find_road
         @road = Road.find_by_id(params[:id])
     end
-    
-    def course_name(course_id)
-        @course = Course.find_by_id(course_id)
+    def owner_wall
+        if @road.user != current_user
+            redirect_to user_path(current_user)
+        end
     end
 end
