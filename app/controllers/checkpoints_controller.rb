@@ -71,7 +71,7 @@ class CheckpointsController < ApplicationController
 
     private
     def checkpoint_params
-        params.require(:checkpoint).permit(:order, :goal_date, :completed, :course_id, :road_id, :user_id, course_attributes:[:name, :description, :language, :difficulty, :source_url])
+        params.require(:checkpoint).permit(:order, :goal_date, :completed, :course_id, :road_id, :user_id, course_attributes:[:name, :description, :topic, :difficulty, :source_url])
     end
 
     def find_checkpoint

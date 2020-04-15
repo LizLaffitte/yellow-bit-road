@@ -1,5 +1,5 @@
 <h1><%= @course.name %></h1>
-<strong><%= @course.language %> | <%= @course.difficulty %> </strong>
+<strong><%= @course.topic %> | <%= @course.difficulty %> </strong>
 <p><%= @course.description %>
 </p>
 <%= link_to "Find the Course Online", @course.source_url, target: "_blank" if !@course.source_url.blank? %>

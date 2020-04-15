@@ -1,6 +1,6 @@
 <h1>Add <%= @course.name %></h1>
 <%= has_errors?(@checkpoint) %>
-<p><strong><%= "#{@course.language} | #{@course.difficulty}" %>
+<p><strong><%= "#{@course.topic} | #{@course.difficulty}" %>
 <p><%= @course.description %></p>
 <%= form_for [@course, @checkpoint] do |f| %>
     <%= f.hidden_field :user_id, :value => current_user.id %>

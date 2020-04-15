@@ -3,7 +3,7 @@
 
 <ul>
 <% @road.checkpoints.each do |check| %>
-    <li><%= link_to check.course.name, road_checkpoint_path(@road, check) %>: <%= check.course.language %> | <%= check.goal_date %><br />
+    <li><%= link_to check.course.name, road_checkpoint_path(@road, check) %>: <%= check.course.topic %> | <%= check.goal_date %><br />
    <%= check.course.description %></li>
 
 <% end %>

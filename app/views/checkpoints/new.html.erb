@@ -18,8 +18,8 @@
             <%= course.text_field :name %> <br /><br />
             <%= course.label :description %><br />
             <%= course.text_area :description %> <br /><br />
-            <%= course.label :language %>*<br />
-            <%= course.select(:language, options_for_select(Course.language_options), prompt: true) %> <br /><br />
+            <%= course.label :topic %>*<br />
+            <%= course.select(:topic, options_for_select(Course.topic_options), prompt: true) %> <br /><br />
             <%= course.label :difficulty %><br />
             <%= course.select(:difficulty, options_for_select(Course.difficulty_levels), prompt: true) %> <br /><br />
             <%= course.label "Link to Course" %><br />
