@@ -1,5 +1,10 @@
-<ul>
+
 <% @roads.each do |road| %>
-    <li><%= link_to road.name, road_path(road) %></li>
+    <div class="road-card">
+        
+        <h2><%= road.name %></h2>
+        <strong><%= road.checkpoints.count %> checkpoints</strong><br />
+        <%= link_to "See the Road", road_path(road) %>
+    </div>
+    
 <% end %>   
-</ul> 
