@@ -1,11 +1,17 @@
-<div class="card-display">
+<ul class="card-display">
 <% @roads.each do |road| %>
-    <div class="road-card">
-        
+    <li class="road-card">
+        <div class="card-details">
         <h2><%= road.name %></h2>
-        <strong><%= road.checkpoints.count %> checkpoints</strong><br />
+        <% road.course_topics.each do |topic| %>
+            <div class="topic"><%= topic %></div>
+            <% end %><br />
+        <strong><%= road.checkpoints.count %> courses</strong><br />
+        
+        <br />
         <%= link_to "See the Road", road_path(road) %>
-    </div>
+        </div>
+    </li>
     
 <% end %>   
-</div>
+</ul>

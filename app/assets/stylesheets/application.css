@@ -12,12 +12,18 @@
  *
  *= require_tree .
  *= require_self
+ url('./brick_bg.png')
  */
  body {margin: 0;}
-nav {background:url('./brick_bg.png'), #2d2d2d; height:70px; position:fixed; top: 0; width: 100%;}
+nav, footer{
+  background: #04724D; 
+  height: 70px;
+  width: 100%;
+}
+  nav { position:fixed; top: 0; }
 nav ul {text-align:right; margin: 0 auto; width:85%;}
 nav ul li {display:inline-block; margin-right:25px; line-height:70px;}
-nav a, footer a {color:white; text-decoration: none; font-family: 'Roboto Slab', arial, sans-serif;  font-size:20px; margin-bottom: 10px;}
+nav a, footer input {color:white; text-decoration: none; font-family: 'Roboto Slab', arial, sans-serif;  font-size:20px; margin-bottom: 10px;}
 nav a:hover{border-bottom: 1px solid white;}
 div.field_with_errors input {border:1px solid red;}
 html, body {
@@ -39,24 +45,32 @@ html, body {
     width: 75%;
     min-width: 300px;
     margin: auto;
-    margin-bottom: 70px;
+    margin-bottom: 70px;   
+}
+  .road-card { 
+    float:left;
+    display: block;
+    width: 33.3%;
+    box-sizing: border-box;
+    padding: 0 15px;
+  }
+
+  .road-card .card-details {
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 225px;
     background: #fff;
-   
-}
-.card-display {
-  display: grid;
-  grid-template-columns:  25% auto 25% auto 25%;
-  grid-template-rows: auto;
-
-}
-  .road-card {  float:left;
-
+    border-top: 10px #b80C09 solid;
+  }
+  .topic {
+    display: inline-block;
+    color: white;
+    background: #01BAEF;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 1px;
   }
 footer {
-    height: 70px;
-    
-    background:url('./brick_bg.png'), #2d2d2d; 
-
     padding-top: 20px;
     padding-left: 20px
   }

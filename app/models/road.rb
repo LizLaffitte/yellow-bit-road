@@ -17,4 +17,8 @@ class Road < ApplicationRecord
     Course.where.not(id: self.course_ids)
   end
 
+  def course_topics
+    courses.distinct.pluck(:topic)
+  end
+
 end
