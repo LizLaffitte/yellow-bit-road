@@ -2,7 +2,7 @@ class Road < ApplicationRecord
     belongs_to :user
     has_many :checkpoints, dependent: :destroy
     has_many :courses, through: :checkpoints
-    accepts_nested_attributes_for :checkpoints
+    accepts_nested_attributes_for :checkpoints, reject_if: proc { |attributes| attributes['course_id'].blank? }
 
     validates :name, presence: true, uniqueness: {scope: [ :user_id]}
     validate :goal_date_cannot_be_in_the_past

@@ -34,21 +34,27 @@ html, body {
   padding-top:70px;
 }
 .page-content {
-    padding: 70px;
+    padding: 50px 70px 70px;
     min-height: 500px;
     width: 75%;
     min-width: 300px;
     margin: auto;
+    margin-bottom: 70px;
     background: #fff;
-    display: grid;
-    grid-template-columns:  25% auto 25% auto 25%;
-    grid-template-rows: auto;
-  .road-card{
+   
+}
+.card-display {
+  display: grid;
+  grid-template-columns:  25% auto 25% auto 25%;
+  grid-template-rows: auto;
+
+}
+  .road-card {  float:left;
 
   }
 footer {
     height: 70px;
-    margin-top: -70px;
+    
     background:url('./brick_bg.png'), #2d2d2d; 
 
     padding-top: 20px;
