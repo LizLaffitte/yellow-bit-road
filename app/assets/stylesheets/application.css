@@ -114,6 +114,23 @@ html, body {
   padding-bottom: 30px;
   border-bottom: 5px solid #ddd;
 }
+#checkpoint-list li:after {
+  content: " ";
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+.check-status {
+  float: right;
+}
+.check-details {
+  float:left;
+  max-width: 85%;
+}
+.check-status input {
+  width: 20px; 
+  height: 20px;
+}
 .list-card {
   background: #fff;
   padding: 20px;

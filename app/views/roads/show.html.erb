@@ -9,17 +9,20 @@
 <ul id="checkpoint-list">
 <% @road.checkpoints.order(:goal_date).each do |check| %>
     <li>
-    <div>
+    <div class="check-details">
         <h3><%= check.course.name %></h3>
         <%= check.course.topic %> | <%= formatted_goal_date(check) %><br />
+       
         <p><%= check.course.description %></p>
+        
         <%= link_to "Course Details", road_checkpoint_path(@road, check), class: "btn" %>
    </div>
-   <div>
-   <%= form_for check do |f| %>
-    <%= f.check_box :completed, :class => "toggle", :checked => (true if check.complete?) %>
+   <div class="check-status">
+   <%= form_for [@road, check] do |f| %>
+    <%= f.check_box :completed, :class => "toggle", :checked => (false if check.completed) %>
   <% end %>
    </div>
+  
    </li>
 
 <% end %>
