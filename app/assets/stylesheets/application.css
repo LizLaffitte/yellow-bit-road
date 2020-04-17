@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  url('./brick_bg.png')
+ #04724D - Dark Green
+ #16DB65 - Light Green
+ #FFD23F - Yellow
+ #B80c09 - Red
+ #01BAEF - Light Blue
  */
  body {margin: 0;}
 nav, footer{
@@ -32,7 +37,9 @@ html, body {
     font-family: arial;
   }
   h1, h2, h3, h4 {font-family: 'Roboto Slab', arial, sans-serif; }
-  h2 {margin-bottom:12px; }
+  h2 {
+    margin: 10px 0px;
+   }
 .content {
   min-height: 100%;
   background: rgb(237, 239, 240);
@@ -60,7 +67,11 @@ html, body {
     box-sizing: border-box;
     min-height: 225px;
     background: #fff;
-    border-top: 10px #b80C09 solid;
+    border-top: 10px #FFD23F solid;
+    box-shadow: 5px 5px 5px #ddd;
+  }
+  .road-card .card-details a {
+    color: #04724D;
   }
   .topic {
     display: inline-block;
@@ -70,6 +81,15 @@ html, body {
     margin: 5px;
     border-radius: 1px;
   }
+
+.green-btn {
+  background-color:#04724D; 
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 2px;
+  font-size: 16px;
+}
 footer {
     padding-top: 20px;
     padding-left: 20px
