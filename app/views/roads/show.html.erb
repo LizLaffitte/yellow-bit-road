@@ -1,5 +1,10 @@
+<div id="road-map" class="list-card">
 <h1><%= @road.name %></h1>
-<%= is_owner?(@road) %>
+<h3>Goal: <%= formatted_goal_date(@road) %> | days left to meet your goal! </h3>
+<% @road.course_topics.each do |topic| %>
+    <div class="topic"><%= topic %></div>
+    <% end %>
+
 
 <ul>
 <% @road.checkpoints.each do |check| %>
@@ -8,4 +13,10 @@
 
 <% end %>
 </ul>
-<%= link_to "Add a Checkpoint", new_road_checkpoint_path(@road) %> 
+<%= link_to "Add Checkpoint", new_road_checkpoint_path(@road), class: "btn" %> 
+<%= is_owner?(@road) %>
+</div>
+<div id="next-checkpoint" class="list-card">
+    <h2>Your Next Step</h2>
+
+</div>

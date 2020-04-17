@@ -18,6 +18,11 @@ module ApplicationHelper
             render "layouts/logged_out_nav"
         end
     end
+    
+   
 
+    def days_left(my_obj)
+        
+    end
 
 end

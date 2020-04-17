@@ -44,7 +44,6 @@ html, body {
   min-height: 100%;
   background: rgb(237, 239, 240);
   margin-top:70px;
-  padding-top:70px;
 }
 .page-content {
     padding: 50px 70px 70px;
@@ -81,14 +80,39 @@ html, body {
     margin: 5px;
     border-radius: 1px;
   }
-
-.green-btn {
-  background-color:#04724D; 
+.btn {
   text-decoration: none;
   color: #fff;
   padding: 5px 10px;
   border-radius: 2px;
   font-size: 16px;
+  border: none;
+}
+.green-btn {
+  background-color:#04724D; 
+}
+.red-btn {
+  background-color: #B80c09;
+}
+.edit-menu .button_to {
+  display: inline-block;
+
+}
+#road-map {
+  width: 60%;
+  float:left;
+}
+.list-card {
+  background: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 5px 5px 5px #ddd;
+  display: inline-block;
+}
+
+#next-checkpoint {
+  width: 35%;
+    margin-left: 5%;
 }
 footer {
     padding-top: 20px;

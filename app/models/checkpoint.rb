@@ -6,15 +6,14 @@ class Checkpoint < ApplicationRecord
     validate :goal_date_cannot_be_in_the_past
     validates :course_id, uniqueness: {scope: [:road_id, :user_id],  message: "should only be on your road once "}
 
+
     def goal_date_cannot_be_in_the_past
       if goal_date.present? && goal_date < Date.today
         errors.add(:goal_date, "can't be in the past")
       end
     end    
 
-    def formatted_goal_date
-      @date_obj = self.goal_date.strftime('%D')
-    end
+    
 
 
 end
