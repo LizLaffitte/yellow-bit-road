@@ -25,6 +25,7 @@ nav, footer{
   height: 70px;
   width: 100%;
 }
+a {color: #04724D; font-weight:bold;}
   nav { position:fixed; top: 0; }
 nav ul {text-align:right; margin: 0 auto; width:85%;}
 nav ul li {display:inline-block; margin-right:25px; line-height:70px;}
@@ -88,6 +89,8 @@ html, body {
   border-radius: 2px;
   font-size: 16px;
   border: none;
+  background-color: #16DB65;
+  display: inline-block;
 }
 .green-btn {
   background-color:#04724D; 
@@ -103,9 +106,13 @@ html, body {
   width: 60%;
   float:left;
 }
-#road-map ul {
+#road-map ul#checkpoint-list {
   display: inline;
   list-style: none;
+}
+#checkpoint-list li {
+  padding-bottom: 30px;
+  border-bottom: 5px solid #ddd;
 }
 .list-card {
   background: #fff;
