@@ -52,6 +52,7 @@ html, body {
     min-width: 300px;
     margin: auto;
     margin-bottom: 70px;   
+    overflow:auto;
 }
   .road-card { 
     float:left;
@@ -101,6 +102,10 @@ html, body {
 #road-map {
   width: 60%;
   float:left;
+}
+#road-map ul {
+  display: inline;
+  list-style: none;
 }
 .list-card {
   background: #fff;

@@ -21,8 +21,6 @@ module ApplicationHelper
     
    
 
-    def days_left(my_obj)
-        
-    end
+    
 
 end

@@ -1,15 +1,18 @@
 <div id="road-map" class="list-card">
 <h1><%= @road.name %></h1>
-<h3>Goal: <%= formatted_goal_date(@road) %> | days left to meet your goal! </h3>
+<h3>Goal: <%= formatted_goal_date(@road) %> | <%= days_left(@road) %> days left to meet your goal! </h3>
 <% @road.course_topics.each do |topic| %>
     <div class="topic"><%= topic %></div>
     <% end %>
 
 
 <ul>
-<% @road.checkpoints.each do |check| %>
-    <li><%= link_to check.course.name, road_checkpoint_path(@road, check) %>: <%= check.course.topic %> | <%= check.goal_date %><br />
-   <%= check.course.description %></li>
+<% @road.checkpoints.order(:goal_date).each do |check| %>
+    <li><h3><%= check.course.name %></h3>
+    <%= check.course.topic %> | <%= formatted_goal_date(check) %><br />
+   <p><%= check.course.description %></p>
+   <%= link_to "Course Details", road_checkpoint_path(@road, check) %>
+   </li>
 
 <% end %>
 </ul>
