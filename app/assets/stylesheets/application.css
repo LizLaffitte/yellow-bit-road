@@ -80,6 +80,10 @@ html, body {
     box-shadow: 5px 5px 5px #ddd;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-details .btn{
+    max-width:97px;
   }
   .topic {
     display: inline-block;
