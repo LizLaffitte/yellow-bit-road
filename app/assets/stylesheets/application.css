@@ -37,7 +37,7 @@ html, body {
     margin: 0;
     font-family: arial;
   }
-  h1, h2, h3, h4 {font-family: 'Roboto Slab', arial, sans-serif; }
+  h1, h2, h3, h4 {font-family: 'Roboto Slab', arial, sans-serif; margin-top:0px;}
   h2 {
     margin: 10px 0px;
    }
@@ -106,6 +106,9 @@ html, body {
 .red-btn {
   background-color: #B80c09;
 }
+.blue-btn {
+  background-color: #01BAEF;
+}
 .edit-menu .button_to {
   display: inline-block;
 
@@ -115,7 +118,13 @@ html, body {
 }
 #road-map h1 {
   margin-bottom: 0px;
+  
+}
+.yellow-bb {
   border-bottom: 8px solid #FFD23F;
+}
+.yellow-bb span{
+  font-size: 20px;
 }
 #road-map ul#checkpoint-list {
   display: inline;
@@ -158,10 +167,14 @@ html, body {
 }
 .list-card {
   background: #fff;
-  padding: 20px;
+  padding: 30px;
   box-sizing: border-box;
   box-shadow: 5px 5px 5px #ddd;
   display: inline-block;
+}
+.form-holder.list-card {
+  margin: 0 auto;
+  flex-basis: 600px;
 }
 .check-complete {
   background-color: #16DB65;
