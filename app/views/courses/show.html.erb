@@ -4,6 +4,18 @@
 <p><%= @course.description %>
 </p>
 <%= link_to "Find Online", @course.source_url, target: "_blank", class: "btn" if !@course.source_url.blank? %>
-<%= link_to "Add this course", new_course_checkpoint_path(@course), class: "btn" %>
-<%= admin_menu(@course) %>
+
+
+</div>
+<div id="sidebar" class="list-card">
+  <h2>Get Moving!</h2>
+  <div>
+  <%= link_to "Add this course", new_course_checkpoint_path(@course), class: "btn" %>
+  </div>
+  <div class="edit-options">
+  <% if current_user.admin %>
+    <h3>Edit <%= @course.name %></h3>
+    <%= render partial: "users/edit_menu", locals: {child_path: edit_course_path(@course), child_delete_path: course_path(@course)} %>
+<% end %>
+</div>
 </div>

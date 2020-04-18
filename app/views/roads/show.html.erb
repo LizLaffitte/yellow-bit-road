@@ -9,7 +9,7 @@
        
         <p><%= check.course.description %></p>
         
-        <%= link_to "Course Details", road_checkpoint_path(@road, check), class: "btn" %>
+        <%= link_to "Checkpoint Details", road_checkpoint_path(@road, check), class: "btn" %>
    </div>
    <% if  @road.user == current_user %>
    <div class="check-status <%= 'check-complete' if check.completed %>">

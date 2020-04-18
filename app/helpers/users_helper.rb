@@ -13,12 +13,6 @@ module UsersHelper
         end
     end
 
-    def admin_menu(course)
-        if current_user.admin
-            render partial: "users/edit_menu", locals: {child_path: edit_course_path(course), child_delete_path: course_path(course)}
-        end
-    end
-
     def sidebar_options(child)
         if child.user == current_user
             render partial: "roads/owner_sidebar"
