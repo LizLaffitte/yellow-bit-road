@@ -78,9 +78,8 @@ html, body {
     background: #fff;
     border-top: 10px #FFD23F solid;
     box-shadow: 5px 5px 5px #ddd;
-  }
-  .road-card .card-details a {
-    color: #04724D;
+    display: flex;
+    flex-direction: column;
   }
   .topic {
     display: inline-block;

@@ -3,13 +3,15 @@
     <li class="road-card">
         <div class="card-details">
         <h2><%= road.name %></h2>
-        <% road.course_topics.each do |topic| %>
-            <div class="topic"><%= topic %></div>
-            <% end %><br />
+        <div class="topic-holder">
+            <% road.course_topics.each do |topic| %>
+                <div class="topic"><%= topic %></div>
+            <% end %>
+        </div>
         <strong><%= road.checkpoints.count %> courses</strong><br />
         
         <br />
-        <%= link_to "See the Road", road_path(road) %>
+        <%= link_to "Road Map", road_path(road), class: "btn" %>
         </div>
     </li>
     

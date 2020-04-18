@@ -1,6 +1,8 @@
+<div class="list-card">
 <h1><%= @course.name %></h1>
 <strong><%= @course.topic %> | <%= @course.difficulty %></strong>
 <p><%= @course.description %></p>
 <%= link_to "Course Link", @course.source_url %>
 <p><%= formatted_goal_date(@checkpoint)%></p>
 <%= owner_edit_menu(@checkpoint) %>
+</div>
