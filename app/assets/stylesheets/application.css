@@ -58,11 +58,12 @@ html, body {
     flex-wrap: wrap;
     justify-content: space-between;
 }
-  .road-card { 
+  .outer-card { 
     flex-basis: 350px;
     box-sizing: border-box;
     flex-shrink: 0;
     margin-bottom:30px;
+    display:flex;
   }
 .card-display {
   flex-grow: 1;
@@ -71,7 +72,7 @@ html, body {
   list-style: none;
   justify-content: space-between;
 }
-  .road-card .card-details {
+  .outer-card .card-details {
     padding: 20px;
     box-sizing: border-box;
     min-height: 225px;
@@ -81,6 +82,10 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex-basis: 350px;
+  }
+  ul.card-display:last-child {
+    justify-content: space-around;
   }
   .card-details .btn{
     max-width:97px;

@@ -1,5 +1,14 @@
-<ul>
+<ul class="card-display">
 <% @courses.each do |course| %>
-    <li><%= link_to course.name, course_path(course) %></li>
+    <li class="outer-card">
+        <div class="card-details">
+            <h2><%= course.name %></h2>
+            <div class="topic-holder">
+                <div class="topic"><%= course.topic %></div>
+
+            </div>
+            <p><%= course.description %></p>
+            <%= link_to course.name, course_path(course) %>
+        </div>
+    </li>
 <% end %>
-</ul>

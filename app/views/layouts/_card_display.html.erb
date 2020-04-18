@@ -1,11 +1,15 @@
 <ul class="card-display">
-<% @roads.each do |road| %>
+<% items.each do |item| %>
     <li class="outer-card">
         <div class="card-details">
-        <h2><%= road.name %></h2>
+        <h2><%= item.name %></h2>
         <div class="topic-holder">
-            <% road.course_topics.each do |topic| %>
-                <div class="topic"><%= topic %></div>
+            <% if item.class == Road %>
+                <% road.course_topics.each do |topic| %>
+                    <div class="topic"><%= topic %></div>
+                <% end %>
+            <% else %>
+                    <%=  %>
             <% end %>
         </div>
         <strong><%= road.checkpoints.count %> courses</strong>
