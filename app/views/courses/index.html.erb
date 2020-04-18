@@ -5,10 +5,13 @@
             <h2><%= course.name %></h2>
             <div class="topic-holder">
                 <div class="topic"><%= course.topic %></div>
-
+                <div class="level diff-<%= course.difficulty %>"><%= course.difficulty %></div>
             </div>
             <p><%= course.description %></p>
-            <%= link_to course.name, course_path(course) %>
+            <div>
+            <%= link_to "Course Details", course_path(course), class: "btn" %>
+            <%= link_to "Add this course", new_course_checkpoint_path(course), class: "btn green-btn" %>
+            </div>
         </div>
     </li>
 <% end %>

@@ -6,10 +6,11 @@
         <div class="topic-holder">
             <% road.course_topics.each do |topic| %>
                 <div class="topic"><%= topic %></div>
+                
             <% end %>
         </div>
         <strong><%= road.checkpoints.count %> courses</strong>
-        <%= link_to "Road Map", road_path(road), class: "btn" %>
+        <div><%= link_to "Road Map", road_path(road), class: "btn" %></div>
         </div>
     </li>
     
