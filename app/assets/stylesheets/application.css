@@ -183,9 +183,12 @@ html, body {
   flex-basis: 415px;
   height: 0%;
 }
+div + .edit-options {
+  margin-top: 15px;
+}
 .edit-options {
   border-top: 5px solid #ddd;
-    margin-top: 15px;
+  padding-top: 15px;
 }
 footer {
     padding-top: 20px;
