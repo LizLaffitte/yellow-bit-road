@@ -19,12 +19,13 @@ module UsersHelper
         end
     end
 
-    # def sidebar_options(child)
-    #     if child.owner == current_user
-            
-    #     end
-
-    # end
+    def sidebar_options(child)
+        if child.user == current_user
+            render partial: "roads/owner_sidebar"
+        else 
+            render partial: "layouts/sidebar"
+        end
+    end
 
 
 end

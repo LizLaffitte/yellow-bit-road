@@ -11,7 +11,7 @@
     <p>Congratulations! You made it to Emerald City. Don't stop now: keep going, keep learning!</p>
     <%= link_to "See Your Roads", user_path(current_user), class: "btn" %> <%= link_to "Start A New Road", new_road_path, class: "btn" %>
 <% end %>
-</div> a
+</div>
 <div class="edit-options">
 <h3>Edit <%= @road.name %></h3>
 <div class="edit-menu"><%= link_to "Add Checkpoint", new_road_checkpoint_path(@road), class: "btn" %> <%= link_to "Edit", edit_road_path(@road), class: "green-btn btn" %> <%= button_to "Delete", road_path(@road), method: :delete, class: "red-btn btn" %></div>
