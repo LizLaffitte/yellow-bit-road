@@ -3,4 +3,4 @@
 <p><%= @course.description %></p>
 <%= link_to "Course Link", @course.source_url %>
 <p><%= formatted_goal_date(@checkpoint)%></p>
-<%= is_owner?(@checkpoint) %>
+<%= owner_edit_menu(@checkpoint) %>

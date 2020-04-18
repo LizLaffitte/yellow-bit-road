@@ -1,5 +1,5 @@
 module UsersHelper
-    def is_owner?(child_item)
+    def owner_edit_menu(child_item)
         if child_item.user == current_user
             if child_item.instance_of?(Road)
                 @local_one = edit_road_path(child_item)

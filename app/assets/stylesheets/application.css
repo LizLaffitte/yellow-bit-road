@@ -112,10 +112,13 @@ html, body {
 }
 #checkpoint-list li {
   padding-bottom: 30px;
-  border-bottom: 5px solid #ddd;
+  
   display: flex;
   width: 100%;
   justify-content: space-between;
+}
+#checkpoint-list li:not(:last-child) {
+  border-bottom: 5px solid #ddd;
 }
 #checkpoint-list li:after {
   content: " ";
@@ -125,6 +128,9 @@ html, body {
 }
 .check-details {
   flex-basis: 600px;
+}
+.check-details h3 {
+  margin-top: 0px;
 }
 .check-status {
   display: flex;
@@ -145,7 +151,9 @@ html, body {
   box-shadow: 5px 5px 5px #ddd;
   display: inline-block;
 }
-
+.check-complete {
+  background-color: #16DB65;
+}
 #next-checkpoint {
   width: 35%;
     margin-left: 5%;

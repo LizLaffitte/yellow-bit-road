@@ -1,36 +1,35 @@
 <div id="road-map" class="list-card">
 <h1><%= @road.name %></h1>
-<h3>Goal: <%= formatted_goal_date(@road) %> | <%= days_left(@road) %> days left to meet your goal! </h3>
-<% @road.course_topics.each do |topic| %>
-    <div class="topic"><%= topic %></div>
-    <% end %>
-
-
 <ul id="checkpoint-list">
 <% @road.checkpoints.order(:goal_date).each do |check| %>
     <li>
     <div class="check-details">
         <h3><%= check.course.name %></h3>
-        <%= check.course.topic %> | <%= formatted_goal_date(check) %><br />
+        <div class="topic"><%= check.course.topic %></div> | <%= formatted_goal_date(check) %><br />
        
         <p><%= check.course.description %></p>
         
         <%= link_to "Course Details", road_checkpoint_path(@road, check), class: "btn" %>
    </div>
-   <div class="check-status">
+   <% if  @road.user == current_user %>
+   <div class="check-status <%= 'check-complete' if check.completed %>">
    <%= form_for [@road, check] do |f| %>
-    <%= f.check_box :completed, :class => "toggle", :checked => (false if check.completed) %>
+    <%= f.check_box :completed, :class => "toggle", :checked => (true if check.completed) %>
   <% end %>
    </div>
-  
+  <% end %>
    </li>
 
 <% end %>
 </ul>
-<%= link_to "Add Checkpoint", new_road_checkpoint_path(@road), class: "btn" %> 
-<%= is_owner?(@road) %>
+
+<%= owner_edit_menu(@road) %>
 </div>
 <div id="next-checkpoint" class="list-card">
     <h2>Your Next Step</h2>
+    <% if @road.user == current_user %>
+<h3>Goal: <%= formatted_goal_date(@road) %> | <%= days_left(@road) %> days left to meet your goal! </h3>
+<%= link_to "Add Checkpoint", new_road_checkpoint_path(@road), class: "btn" %> 
+<% end %>
 
 </div>
