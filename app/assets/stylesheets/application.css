@@ -113,6 +113,9 @@ html, body {
 #checkpoint-list li {
   padding-bottom: 30px;
   border-bottom: 5px solid #ddd;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 #checkpoint-list li:after {
   content: " ";
@@ -120,16 +123,20 @@ html, body {
    height: 0; 
    clear: both;
 }
-.check-status {
-  float: right;
-}
 .check-details {
-  float:left;
-  max-width: 85%;
+  flex-basis: 600px;
+}
+.check-status {
+  display: flex;
 }
 .check-status input {
   width: 20px; 
   height: 20px;
+}
+.check-status form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .list-card {
   background: #fff;
