@@ -104,7 +104,7 @@ html, body {
     background-color: #16DB65;
   }
 
-.btn {
+.btn,.form-holder input[type="submit"] {
   text-decoration: none;
   color: #fff;
   padding: 5px 10px;
@@ -113,9 +113,10 @@ html, body {
   border: none;
   background-color: #16DB65;
   display: inline-block;
-  box-shadow: 0px 3px 0px #04724D;
+  box-shadow: 0px 3px 0px #ddd;
   box-sizing: border-box;
 }
+
 div.diff-Moderate, .yellow-btn {
   background-color :#FFD23F;
 }
@@ -123,7 +124,7 @@ div.diff-Moderate, .yellow-btn {
   background-color:#04724D; 
 }
 .green-btn:hover {
-  background-color: #FFD23F;
+  background-color: #01BAEF;;
 }
 .green-btn, .red-btn {
   box-shadow: 0px 3px 0px #bbb;
@@ -132,8 +133,11 @@ div.diff-Moderate, .yellow-btn {
   background-color: #B80c09;
 }
 
-.blue-btn {
+.blue-btn, .form-holder input[type="submit"] {
   background-color: #01BAEF;
+  box-shadow: 0px 3px 0px #bbb;
+  cursor: pointer;
+  font-weight: bold;
 }
 .edit-menu .button_to {
   display: inline-block;
