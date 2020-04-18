@@ -54,15 +54,23 @@ html, body {
     margin: auto;
     margin-bottom: 70px;   
     overflow:auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
   .road-card { 
-    float:left;
-    display: block;
-    width: 33.3%;
+    flex-basis: 380px;
     box-sizing: border-box;
     padding: 0 15px;
+    flex-shrink: 0;
   }
-
+.card-display {
+  flex-grow: 1;
+  flex-wrap: wrap;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
   .road-card .card-details {
     padding: 20px;
     box-sizing: border-box;
@@ -103,8 +111,7 @@ html, body {
 
 }
 #road-map {
-  width: 60%;
-  float:left;
+  flex-basis: 725px;
 }
 #road-map h1 {
   margin-bottom: 0px;
@@ -159,9 +166,9 @@ html, body {
 .check-complete {
   background-color: #16DB65;
 }
-#next-checkpoint {
-  width: 35%;
-    margin-left: 5%;
+#sidebar {
+  flex-basis: 415px;
+  height: 0%;
 }
 footer {
     padding-top: 20px;
