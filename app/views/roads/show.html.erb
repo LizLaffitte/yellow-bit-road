@@ -1,4 +1,4 @@
-<div id="road-map" class="list-card">
+<div id="left-col" class="list-card">
 <div class="yellow-bb"><h1><%= @road.name %> <span><%= "by #{@road.user.username}" if @road.user != current_user %></span></h1></div>
 <ul id="checkpoint-list">
 <% @road.checkpoints.order(:goal_date).each do |check| %>

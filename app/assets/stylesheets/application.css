@@ -59,10 +59,10 @@ html, body {
     justify-content: space-between;
 }
   .road-card { 
-    flex-basis: 380px;
+    flex-basis: 350px;
     box-sizing: border-box;
-    padding: 0 15px;
     flex-shrink: 0;
+    margin-bottom:30px;
   }
 .card-display {
   flex-grow: 1;
@@ -122,10 +122,10 @@ html, body {
   display: inline-block;
 
 }
-#road-map {
+#left-col {
   flex-basis: 725px;
 }
-#road-map h1 {
+#left-col h1 {
   margin-bottom: 0px;
   
 }
@@ -135,7 +135,7 @@ html, body {
 .yellow-bb span{
   font-size: 20px;
 }
-#road-map ul#checkpoint-list {
+#left-col ul#checkpoint-list {
   display: inline;
   list-style: none;
 }
