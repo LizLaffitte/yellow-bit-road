@@ -19,6 +19,12 @@ module UsersHelper
         end
     end
 
+    # def sidebar_options(child)
+    #     if child.owner == current_user
+            
+    #     end
+
+    # end
 
 
 end

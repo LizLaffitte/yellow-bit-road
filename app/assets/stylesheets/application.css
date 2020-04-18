@@ -170,6 +170,10 @@ html, body {
   flex-basis: 415px;
   height: 0%;
 }
+.edit-options {
+  border-top: 5px solid #ddd;
+    margin-top: 15px;
+}
 footer {
     padding-top: 20px;
     padding-left: 20px

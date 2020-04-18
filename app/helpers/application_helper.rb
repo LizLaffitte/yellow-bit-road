@@ -18,9 +18,5 @@ module ApplicationHelper
             render "layouts/logged_out_nav"
         end
     end
-    
-   
-
-    
 
 end
