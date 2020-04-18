@@ -106,6 +106,10 @@ html, body {
   width: 60%;
   float:left;
 }
+#road-map h1 {
+  margin-bottom: 0px;
+  border-bottom: 8px solid #FFD23F;
+}
 #road-map ul#checkpoint-list {
   display: inline;
   list-style: none;
@@ -119,6 +123,7 @@ html, body {
 }
 #checkpoint-list li:not(:last-child) {
   border-bottom: 5px solid #ddd;
+  margin-bottom: 18px;
 }
 #checkpoint-list li:after {
   content: " ";

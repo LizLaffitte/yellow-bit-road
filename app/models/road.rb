@@ -21,4 +21,8 @@ class Road < ApplicationRecord
     courses.distinct.pluck(:topic)
   end
 
+  def next_step
+     checkpoints.order(:goal_date).find_by(completed: false).course.name
+  end
+
 end

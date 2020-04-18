@@ -22,14 +22,13 @@
 
 <% end %>
 </ul>
-
-<%= owner_edit_menu(@road) %>
 </div>
 <div id="next-checkpoint" class="list-card">
+    <h2>Goal: <%= formatted_goal_date(@road) %></h2>
+    <h3><%= days_left(@road) %> days left! </h3>
     <h2>Your Next Step</h2>
-    <% if @road.user == current_user %>
-<h3>Goal: <%= formatted_goal_date(@road) %> | <%= days_left(@road) %> days left to meet your goal! </h3>
+ <%= @road.next_step %>
 <%= link_to "Add Checkpoint", new_road_checkpoint_path(@road), class: "btn" %> 
-<% end %>
+<%= owner_edit_menu(@road) %>
 
 </div>
