@@ -1,7 +1,9 @@
+<div class="list-card">
 <h1><%= @course.name %></h1>
 <strong><%= @course.topic %> | <%= @course.difficulty %> </strong>
 <p><%= @course.description %>
 </p>
-<%= link_to "Find the Course Online", @course.source_url, target: "_blank" if !@course.source_url.blank? %>
-<%= link_to "Add this course", new_course_checkpoint_path(@course) %>
+<%= link_to "Find Online", @course.source_url, target: "_blank", class: "btn" if !@course.source_url.blank? %>
+<%= link_to "Add this course", new_course_checkpoint_path(@course), class: "btn" %>
 <%= admin_menu(@course) %>
+</div>
