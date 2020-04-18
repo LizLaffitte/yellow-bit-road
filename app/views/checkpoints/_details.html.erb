@@ -1,0 +1,6 @@
+<h3><%= check.course.name %></h3>
+<div class="topic"><%= check.course.topic %></div> | <%= formatted_goal_date(check) %><br />
+<p><%= check.course.description %></p>        
+<% if !check.course.source_url.nil? %>
+<%= link_to "Get Moving >", check.course.source_url, class: "btn" %>
+<% end %>

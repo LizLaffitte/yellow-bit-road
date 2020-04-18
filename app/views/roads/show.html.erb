@@ -5,7 +5,7 @@
     <li>
     <div class="check-details">
         <h3><%= check.course.name %></h3>
-        <div class="topic"><%= check.course.topic %></div> | <%= formatted_goal_date(check) %><br />
+        <div class="topic"><%= check.course.topic %></div> <%= formatted_goal_date(check) if !check.completed %><br />
        
         <p><%= check.course.description %></p>
         
@@ -24,11 +24,10 @@
 </ul>
 </div>
 <div id="next-checkpoint" class="list-card">
-    <h2>Goal: <%= formatted_goal_date(@road) %></h2>
-    <h3><%= days_left(@road) %> days left! </h3>
+    <h2>Road Goal Date: <%= formatted_goal_date(@road) %></h2>
+    <p>You have <%= days_left(@road) %> days left. Get moving! </p>
     <h2>Your Next Step</h2>
- <%= @road.next_step %>
-<%= link_to "Add Checkpoint", new_road_checkpoint_path(@road), class: "btn" %> 
-<%= owner_edit_menu(@road) %>
-
+    <div><%= render partial: "checkpoints/details", locals: {check: @road.next_step}  %></div>
+    <h3>Edit <%= @road.name %></h3>
+    <div class="edit-menu"><%= link_to "Add Checkpoint", new_road_checkpoint_path(@road), class: "btn" %> <%= link_to "Edit", edit_road_path(@road), class: "green-btn btn" %> <%= button_to "Delete", road_path(@road), method: :delete, class: "red-btn btn" %></div>
 </div>
