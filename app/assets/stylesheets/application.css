@@ -99,13 +99,22 @@ html, body {
   border: none;
   background-color: #16DB65;
   display: inline-block;
+  box-shadow: 0px 3px 0px #04724D;
+  box-sizing: border-box;
 }
-.green-btn {
+.green-btn, .btn:hover {
   background-color:#04724D; 
 }
-.red-btn {
+.green-btn:hover {
+  background-color: #FFD23F;
+}
+.green-btn, .red-btn {
+  box-shadow: 0px 3px 0px #bbb;
+}
+.red-btn, .red-btn:hover {
   background-color: #B80c09;
 }
+
 .blue-btn {
   background-color: #01BAEF;
 }

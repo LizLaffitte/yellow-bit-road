@@ -4,7 +4,7 @@
 <p>You have <%= days_left(@road) %> days left. Get moving! </p>
 
 <h2>Your Next Step</h2>
-<div><%= render partial: "checkpoints/details", locals: {check: @road.next_step}  %></div>
+<div style="margin-bottom:15px;"><%= render partial: "checkpoints/details", locals: {check: @road.next_step}  %></div>
 <%= link_to "See Your Roads", user_path(current_user), class: "btn" %>
 <% elsif @road.checkpoints.length > 0 %>
     <h2>You Did It!</h2>

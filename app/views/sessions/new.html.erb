@@ -1,4 +1,12 @@
-<h1>Log In</h1>
-<%= has_errors?(@user) %>
-<%= render "form"  %>
-<%= link_to('Log in with Facebook!', '/auth/facebook') %>
+<div class="form-holder list-card">
+    <h1>Log In</h1>
+    <%= has_errors?(@user) %>
+    <%= form_tag '/login' do %>
+        <%= label_tag :username %>
+        <%= text_field_tag :username %>
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>
+        <%= submit_tag "Log in" %>
+    <% end %>
+    <%= link_to('Log in with Facebook!', '/auth/facebook') %>
+</div>

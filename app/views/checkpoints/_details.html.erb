@@ -2,5 +2,5 @@
 <div class="topic"><%= check.course.topic %></div> | <%= formatted_goal_date(check) %><br />
 <p><%= check.course.description %></p>        
 <% if !check.course.source_url.nil? %>
-<%= link_to "Get Moving >", check.course.source_url, class: "btn" %>
+<%= link_to "Learn More", check.course.source_url, class: "btn" %>
 <% end %>

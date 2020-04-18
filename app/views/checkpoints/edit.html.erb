@@ -1,3 +1,4 @@
+<div class="list-card form-holder">
 <h1>Edit Checkpoint</h1>
 <%= has_errors?(@checkpoint) %>
 <p><strong>Course:</strong> <%= @checkpoint.course.name %><br /></p>
@@ -10,5 +11,6 @@
     <%= f.date_field :goal_date %><br /><br />
     <%= f.submit %>
 <% end %>
+</div>
     
 
