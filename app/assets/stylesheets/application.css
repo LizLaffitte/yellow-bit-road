@@ -84,6 +84,10 @@ html, body {
     justify-content: space-between;
     flex-basis: 350px;
   }
+  .outer-card .blue-top{
+
+    border-top: 10px #01BAEF  solid;
+  }
   ul.card-display:last-child {
     justify-content: space-around;
   }
@@ -193,6 +197,7 @@ div.diff-Moderate, .yellow-btn {
   box-sizing: border-box;
   box-shadow: 5px 5px 5px #ddd;
   display: inline-block;
+  height: 0%;
 }
 .form-holder.list-card {
   margin: 0 auto;
