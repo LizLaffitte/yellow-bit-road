@@ -15,5 +15,14 @@ class Course < ApplicationRecord
         ['CSS', 'HTML', 'Ruby', 'PHP', 'JavaScript', 'Python', 'Web Development', 'Cyber Security', 'Web Design', 'Java', 'iOS', 'Android', 'C#', 'SQL'].sort
     end
 
+    def self.available_topics
+        @topics = Course.distinct.pluck(:topic)
+        @topics << "Any Topic"
+        @topics.sort
+    end
+
+    def self.available_difficulties
+        Course.distinct.pluck(:difficulty).sort
+    end
   
 end

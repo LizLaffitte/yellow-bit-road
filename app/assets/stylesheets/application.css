@@ -71,6 +71,7 @@ html, body {
   display: flex;
   list-style: none;
   justify-content: space-between;
+  padding-left: 0px;
 }
   .outer-card .card-details {
     padding: 20px;
@@ -88,7 +89,7 @@ html, body {
 
     border-top: 10px #01BAEF  solid;
   }
-  ul.card-display:last-child {
+  ul.card-display li:last-child {
     justify-content: space-around;
   }
 
