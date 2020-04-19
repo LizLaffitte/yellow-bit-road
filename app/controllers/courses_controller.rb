@@ -18,9 +18,6 @@ class CoursesController < ApplicationController
     def index
         if params[:topic] 
             @courses = Course.where(topic: params[:topic])
-
-        elsif params[:difficulty]
-            @courses = Course.where(difficulty: params[:difficulty])
         else
             @courses = Course.all
         end

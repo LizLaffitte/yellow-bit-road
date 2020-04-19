@@ -25,8 +25,9 @@ class RoadsController < ApplicationController
     def index
         if params[:user_id]
             @roads = User.find_by_id(params[:user_id]).roads
+            @creator = User.find_by_id(params[:user_id])
         else
-            @roads = Road.all
+            @roads = Road.where(public: true)
         end
     end
 

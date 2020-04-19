@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   post '/login', to: "sessions#create"
   get '/auth/facebook/callback' => 'sessions#create'
   post '/logout', to: "sessions#destroy"
-  resources :users, only: [:show, :destroy] 
+  resources :users, only: [:show, :destroy] do
+    resources :roads, only: [:index]
+  end
   
   resources :roads do
     resources :checkpoints, only: [:new, :create, :show, :destroy, :edit, :update]

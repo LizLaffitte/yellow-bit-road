@@ -1,6 +1,6 @@
 <% if logged_in? %>
 <h2>Get Moving!</h2>
-
+<%= link_to "#{@road.user.username} Roads", user_roads_path(@road.user), class: "btn" %>
 <%= link_to "Create a Road", new_road_path, class: "btn" %>
 <%= link_to "Profile", user_path(current_user), class: "blue-btn btn" %>
 

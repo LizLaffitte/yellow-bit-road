@@ -1,3 +1,6 @@
+<% if @creator %>
+<div class="title-card"><h1>Roads by <%= @creator.username %></h1></div>
+<% end %>
 <ul class="card-display">
 <% @roads.each do |road| %>
     <li class="outer-card">

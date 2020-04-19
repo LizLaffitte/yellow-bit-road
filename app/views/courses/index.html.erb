@@ -1,9 +1,3 @@
-
-<%= form_tag(courses_path, method: "get") do  %>
-    <%= select_tag(:topic, options_for_select(Course.available_topics, params[:topic])) %> 
-    <%= submit_tag("Filter") %>
-  <% end %>
-
 <ul class="card-display">
 <% @courses.each do |course| %>
     <li class="outer-card">
