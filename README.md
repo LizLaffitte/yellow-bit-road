@@ -4,79 +4,44 @@ A Rails app (built as a Flatiron Portfolio Project) designed to help self-taught
 
 ## Getting Started
 
-To run this app locally, fork and clone the [GitHub repo](https://github.com/LizLaffitte/yellow-bit-road) to your local machine. 
-
-Change directories into the repo directory, run bundle install and . 
-```
-$cd yellowbitroad 
-$bundle install
-$db:migrate
-```
-Crea
-
-Run $rails s to start a web server and access the app in a web browser. 
-
-Use your favorite browser to visit the route displayed in the terminal. (E.g. http://localhost:3000)
+These instructions will get YellowBitRoad up and running on your computer.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+Other than the gems listed in this app's Gemfile, you will need to have (Ruby)[https://www.ruby-lang.org/en/downloads/] and [Rails](https://guides.rubyonrails.org/v5.0/getting_started.html) installed on your local machine as well as the ability to install Ruby gems.
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+To run this app locally, fork and clone the [GitHub repo](https://github.com/LizLaffitte/yellow-bit-road) to your local machine. 
 
-Say what the step will be
-
+Change directories into the repo directory. Run bundle install to install dependencies, and rails db:migrate and rails db:seed to create and seed the database. 
 ```
-Give the example
-```
-
-And repeat
-
-```
-until finished
+$cd yellowbitroad 
+$bundle install
+$rails db:migrate
+$rails db:seed
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+Run $rails s to start a web server and access the app in a web browser. 
 ```
-Give an example
+$rails s
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+Use your favorite browser to visit the route displayed in the terminal. (E.g. http://localhost:3000)
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* Rails
+* Ruby 
+* Tears of a Programmer
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Bug reports and pull requests are welcome on GitHub at https://github.com/LizLaffitte/yellow-bit-road. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant [code of conduct](https://github.com/LizLaffitte/yellow-bit-road/code_of_conduct.md).
+
+
+## License
+This project is licensed under the MIT License - see the LICENSE.md file for details
 
 ## Versioning
 
