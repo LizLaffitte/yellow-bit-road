@@ -6,6 +6,7 @@ class Road < ApplicationRecord
 
     validates :name, presence: true, uniqueness: {scope: [ :user_id]}
     validate :goal_date_cannot_be_in_the_past
+    scope :shareable,  -> { where(public: true) }
 
   def goal_date_cannot_be_in_the_past
     if goal_date.present? && goal_date < Date.today

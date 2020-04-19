@@ -27,7 +27,7 @@ class RoadsController < ApplicationController
             @roads = User.find_by_id(params[:user_id]).roads
             @creator = User.find_by_id(params[:user_id])
         else
-            @roads = Road.where(public: true)
+            @roads = Road.shareable
         end
     end
 
