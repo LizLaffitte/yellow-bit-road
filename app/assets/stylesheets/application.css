@@ -241,3 +241,13 @@ footer input {
     border: none;
     background: none;
 }
+#branding{
+  color: #fff;
+  display: inline-block;
+  float:left;
+  line-height: 70px;
+}
+#nav-items {
+  width:85%;
+  margin: 0 auto;;
+}
