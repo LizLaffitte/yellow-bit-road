@@ -1,10 +1,27 @@
 <div class="list-card" id="left-col">
-<h1><%= "#{@user.username}'s Profile" %></h1>
-<h2>Your Yellow Bit Roads:</h2>
-<ul>
-<% @roads.each do |road| %>
-    <li><%= link_to road.name, road_path(road) %></li>
-<% end %>
-</ul>
-<p> <%= link_to "Add A New Road", new_road_path(current_user) %></p>
+    <div class="yellow-bb">
+        <h1><%= "#{@user.username}" %></h1>
+    </div>
+    <h2>Your Roads:</h2>
+    <ul id="checkpoint-list">
+    <% @roads.each do |road| %>
+        <li>
+            <div class="check-details">
+            <h3><%= road.name %></h3>
+            <div class="topic-holder">
+            <% road.course_topics.each do |topic| %>
+                <div class="topic"><%= topic %></div> 
+                
+            <% end %> | <strong><%= road.checkpoints.count %> courses</strong> | <%= link_to "Road Map", road_path(road), class: "btn" %>
+        </div>
+        
+        <div> </div>
+        </li>
+        <% end %>
+    </ul>
+<p> <%= link_to "Add A New Road", new_road_path(current_user), class: "btn" %></p>
 </div>
+
+
+       
+
