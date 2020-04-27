@@ -11,8 +11,8 @@ end
 
 roads = [
     ['Beginning', true, '2020-12-20', '1'],
-    ['Front End Development', true, "2020-10-10", '1'],
-    ["Basic HTML & HTML5", true, "2021-01-31", '1'],
+    ['Front End Development', true, '2020-10-10', '1'],
+    ["Basic HTML & HTML5", true, '2021-01-31', '1'],
     ["Learn SQL", true, "2020-06-15", "2", ]
 ]
 roads.each do |name, public, goal_date, user_id| 
@@ -40,7 +40,7 @@ checks = [
 ["2020-05-15", true, "2", "1", "1"],
 ["2020-05-30", true, "3", "1", "1"],
 ["2020-09-20", false, "5", "2", "1"],
-["2020-09-19", true, "6", "2", "1"]
+["2020-09-19", true, "6", "2", "1"],
 ["2020-09-25", false, "7", "2", "1"],
 ["2020-09-30", false, "8", "2", "1"],
 ["2020-10-01",  false,  "9",  "2", "1"],
