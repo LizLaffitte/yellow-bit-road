@@ -22,7 +22,7 @@ test:
 
 production:
   <<: *default
-   adapter: postgresql
+  adapter: postgresql
   database: mydb
   pool: 5
   timeout: 5000
