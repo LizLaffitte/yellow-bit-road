@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post '/login', to: "sessions#create"
   get '/auth/facebook/callback' => 'sessions#create'
   post '/logout', to: "sessions#destroy"
+  get '/courses/python', to: "courses#python"
   resources :users, only: [:show, :destroy] do
     resources :roads, only: [:index]
   end

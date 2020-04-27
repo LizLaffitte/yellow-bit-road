@@ -24,6 +24,12 @@ class CoursesController < ApplicationController
     end
 
     def show
+
+    end
+
+    def python
+        @courses = Course.python
+        render :index
     end
 
     def edit

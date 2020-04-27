@@ -1,7 +1,7 @@
 module ApplicationHelper
 
     def has_errors?(this_obj)
-        if this_obj.errors
+        if !this_obj.nil? && this_obj.errors
            render partial: "layouts/error_display", locals: {obj_in_question: this_obj}
         end
     end

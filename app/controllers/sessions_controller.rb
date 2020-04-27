@@ -9,8 +9,12 @@ class SessionsController < ApplicationController
             @user = User.find_by(username: params[:username])
             if @user && @user.authenticate(params[:password])
                 log_in(@user)
+            elsif @user 
+            
+                @user.errors.add(:password, "incorrect")
+                render :new
             else
-                render '/login'
+                redirect_to signup_path
             end
         else
             if @user = User.find_by(email: auth[:info]['email'])
