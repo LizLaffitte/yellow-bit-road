@@ -1,3 +1,4 @@
+require 'pry'
 class SessionsController < ApplicationController
     before_action :go_home, only: [:new, :create]
     def new
@@ -10,7 +11,6 @@ class SessionsController < ApplicationController
             if @user && @user.authenticate(params[:password])
                 log_in(@user)
             elsif @user 
-            
                 @user.errors.add(:password, "incorrect")
                 render :new
             else
