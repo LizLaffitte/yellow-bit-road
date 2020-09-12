@@ -75,9 +75,10 @@ Use your favorite browser to visit the route displayed in the terminal. (E.g. ht
 
 ## Built With
 
-* Rails
-* Ruby 
-* Tears of a Programmer
+* Ruby on Rails
+* HTML, CSS, Flexbox
+* Facebook Omniauth
+* BCrypt
 
 ## Contributing
 
