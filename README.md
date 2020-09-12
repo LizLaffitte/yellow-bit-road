@@ -4,13 +4,16 @@ A Ruby on Rails application designed to help self-taught programmers keep track 
 
 YellowBitRoad was built from my own experience as a self-led programming student. I would often find courses online for a language I didn't know, or know well, and want to take at a later date. It was difficult to keep track of them all, and organize them in into a clear road to learning something new. YellowBitRoad was created to serve as a tool for creating and organizing those roads, as well as a way to discover new programming courses to take. 
 
+![YellowBitRoad Homepage](app/assets/images/YBR Home.PNG)
+
 ## Use YellowBitRoad Online
 You can find our deployed app on Heroku: https://yellowbitroad.herokuapp.com/
 
 ### Signup
+(Signup)[https://yellowbitroad.herokuapp.com/signup]
 
 ### Login
-
+(Login)[https://yellowbitroad.herokuapp.com/login] with your username and password, or with Facebook.
 
 
 
