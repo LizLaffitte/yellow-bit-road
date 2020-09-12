@@ -1,8 +1,20 @@
 # YellowBitRoad
 
-A Rails app (built as a Flatiron Portfolio Project) designed to help self-taught programmers keep track of their learning goals, roads and courses. Create a road, add checkpoints and courses, and get moving!
+A Ruby on Rails application designed to help self-taught programmers keep track of their coding learning goals. Users can chart their own roads to learning new programming languages and concepts. Create a new road and add courses as checkpoints along that road. You can assign goal completion dates to both checkpoints and learning roads. 
 
-## Getting Started
+YellowBitRoad was built from my own experience as a self-led programming student. I would often find courses online for a language I didn't know, or know well, and want to take at a later date. It was difficult to keep track of them all, and organize them in into a clear road to learning something new. YellowBitRoad was created to serve as a tool for creating and organizing those roads, as well as a way to discover new programming courses to take. 
+
+## Use YellowBitRoad Online
+You can find our deployed app on Heroku: https://yellowbitroad.herokuapp.com/
+
+### Signup
+
+### Login
+
+
+
+
+## Local Installation Instructions
 
 These instructions will get YellowBitRoad up and running on your computer.
 
