@@ -7,6 +7,7 @@ class Course < ApplicationRecord
     validates :description, presence:true, length: {maximum: 300}
     validates :difficulty, presence: true, inclusion: { in: %w(Easy Moderate Challenging), message: "is not a valid difficulty level" }
     scope :python,  -> { where(topic: 'Python') }
+    scope :css,  -> { where(topic: 'CSS') }
     
     def self.difficulty_levels
         ['Easy', 'Moderate', 'Challenging']

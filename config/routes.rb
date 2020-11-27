@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'sessions#create'
   post '/logout', to: "sessions#destroy"
   get '/courses/python', to: "courses#python"
+  get '/courses/css', to: "courses#css"
   resources :users, only: [:show, :destroy] do
     resources :roads, only: [:index]
   end

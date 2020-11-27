@@ -32,6 +32,11 @@ class CoursesController < ApplicationController
         render :index
     end
 
+    def css
+        @courses = Course.css
+        render :index
+    end
+
     def edit
     end
     
